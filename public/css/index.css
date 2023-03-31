@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  margin: 32px;
+  margin: 24px;
   background: #fff;
 }
 
@@ -11,7 +11,7 @@ main,
 header,
 footer,
 nav {
-  margin: 32px;
+  margin: 16px;
 }
 
 section {
