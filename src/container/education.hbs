@@ -22,9 +22,22 @@
                     {{#with main}}
                     {{#each certificates}}
                     <ul>
-                        <li>{{name}} (ID: {{id}})</li>
+                        <li>{{name}} {{#if status}}(ID: {{id}}){{/if}}</li>
+                        {{#if @index}}
+                <li>
+                    {{name}}
+                </li>
+                {{else}}
+                <li>
+                    {{name}} ({{id}})
+                </li>
+                {{/if}}
                     </ul>
                     {{/each}}
+                    {{#each certificates}}
+
+                
+{{/each}}
                     {{/with}}
                 </div>
 
