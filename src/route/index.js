@@ -359,9 +359,13 @@ router.get('/person', function (req, res) {
 
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('bio', {
-    title: "bio",
+  res.render('bio', 
+  {
+    title: "Biography",
+
+
     name: 'Albert Einstein',
+    
     birthdate: 'March 14, 1879',
     birthplace:
       'Ulm, Kingdom of Württemberg, German Empire',
