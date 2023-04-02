@@ -20,10 +20,18 @@
                     {{> title data="My certificates :" big=false}}
 
                     {{#with main}}
-                    {{#each certificates}}
-                    <ul>
-                        <li>{{name}} {{#if status}}(ID: {{id}}){{/if}}</li>
-                        {{#if @index}}
+                
+                        {{#each certificates}}
+                <ul>
+                     <li>{{name}} {{#if status}}(ID: {{id}}){{/if}}</li>
+                        
+                    </ul>
+    {{/each}}
+<br>
+<hr>
+<br>
+    {{#each certificates}}
+                    {{#if @index}}
                 <li>
                     {{name}}
                 </li>
@@ -32,12 +40,10 @@
                     {{name}} ({{id}})
                 </li>
                 {{/if}}
-                    </ul>
-                    {{/each}}
-                    {{#each certificates}}
-
+    {{/each}}
                 
-{{/each}}
+
+
                     {{/with}}
                 </div>
 
