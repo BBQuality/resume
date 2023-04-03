@@ -1,5 +1,230 @@
 <main>
-  <h2>{{title}}</h2> 
 
-<hr>
+<br>
+<br>
+
+{{#with person}}
+        {{> title data="PERSON INFORMATION" big=true}} 
+    <hr>
     <section>
+
+<dl>
+    <dt>
+        <ins>
+            <h3>
+                {{name}} :
+            </h3>
+        </ins>
+    </dt>
+    <dd>
+        <b>Age:</b> <i>{{age}}</i>
+    </dd>
+    <dd>
+        <b>Gender:</b> <i>{{gender}}</i>
+    </dd>
+</dl>
+
+{{#with address}}
+<section>
+            <details open>
+                     <summary><ins><strong>Address information:</strong></ins></summary>
+<dl>
+    <dd>
+        <b>Street:</b> <i>{{street}}</i>
+    </dd>
+    <dd>
+        <b>City:</b> <i> {{city}}</i>
+    </dd>
+      <dd>
+        <b>State:</b> <i>{{state}}</i>
+    </dd>
+    <dd>
+        <b>Post/zip code:</b> <i>{{zip}}</i>
+    </dd>
+    <dd>
+        <b>Country:</b> <i>{{country}}</i>
+    </dd>
+</dl>
+             </details>
+             {{/with}}
+    </section> 
+<br>
+<hr>
+<br>
+{{#each education}}
+    <section>
+            <details open>
+                     <summary><ins><strong>Education info:</strong></ins></summary>
+<dl>
+    <dt>
+        <ins>
+                <b>
+                      {{university}} :
+                </b>
+        </ins>
+    </dt>
+    <br>
+    <dd>
+        <b>Degree:</b> <ins>{{degree}}</ins>
+    </dd>
+    <dd>
+        <b>Major:</b> <ins>{{major}}</ins>
+    </dd>
+      <dd>
+        <b>Graduation year:</b> <ins>{{graduationYear}}</ins>
+    </dd>
+</dl>
+             </details>
+    </section>
+    {{/each}}
+<br>
+<hr>
+<br>
+{{#each workExperience}}
+    <section>
+            <details open>
+                     <summary><ins><strong>Work expirience:</strong></ins></summary>
+<dl>
+    <dt>
+        <ins>
+                <b>
+                      {{company}} :
+                </b>
+        </ins>
+    </dt>
+    <br>
+    <dd>
+        <b>Title:</b> <ins>{{title}}</ins>
+    </dd>
+
+    <dd>
+        <b>Duration:</b> <ins>{{startDate}} - {{#if endDate}}{{endDate}}{{else}}(ще працюю){{/if}}</ins>
+    </dd>
+    <br>
+    <dt>
+        <b>Responsibilities:</b>
+    </dt>
+      <dd>
+            {{#each responsibilities}}
+           <li><ins>{{this}}</ins></li> 
+            {{/each}}
+    </dd>
+    <br>
+    <dd>
+        <b>Field of industry: </b><ins>{{industry}}</ins>
+    </dd>
+    <dd>
+        <b>Year of foundation: </b><ins>{{year_founded}}</ins>
+    </dd>
+</dl>
+</details>
+<br>
+
+    <details open>
+                     <summary><ins><strong>Employees list :</strong></ins></summary>
+
+{{#each employees}}
+<section>
+    <dl>
+    <dd>
+        <b>Name:</b> <ins>{{name}}</ins>
+    </dd>
+    <dd>
+        <b>Position:</b> <ins>{{position}}</ins>
+    </dd>
+    <dd>
+        <b>Department:</b> <ins>{{department}}</ins>
+    </dd>
+    <dd>
+        {{#each projects}}
+        <details open>
+                     <summary><ins><strong>Projects :</strong></ins></summary>
+                      <dl>
+    <dd>
+        <b>Name:</b> <ins>{{name}}</ins>
+    </dd>
+    <dd>
+        <b>Description:</b> <ins>{{description}}</ins>
+    </dd>
+    <dd>
+        <b>Status:</b> <ins>{{status}}</ins>
+    </dd>
+     <dd>
+        <details open>
+                     <summary><ins><strong>Teams :</strong></ins></summary>
+                     <dl>
+                        <dd>
+                            {{#each teams}}
+                            <b>Team name: </b> <ins>{{team_name}}</ins>
+                        </dd>
+                         <dd>
+                            {{#with team_leader}}
+                                     <ol><b>Team Leader: </b> <ins>{{name}}</ins></ol> 
+                                     <ol><b>Position: </b> <ins>{{title}}</ins></ol> 
+                                     <ol><b>Email: </b> <ins>{{email}}</ins></ol> 
+                                     </dd>
+                                     {{/with}}
+                                     <br>
+                                     {{#each team_members}}
+                                     <dd>
+            <details open>
+                            <summary><ins><strong>Team members :</strong></ins></summary>
+                                     <ol><b>Name: </b> <ins>{{name}}</ins></ol> 
+                                     <ol><b>Title: </b> <ins>{{title}}</ins></ol> 
+                                     <ol><b>Email: </b> <ins>{{email}}</ins></ol> 
+                                    <ins><b>Skills: </b></ins>
+                                     {{#each skills}}
+                                     <li>{{this}}</li>
+                                     {{/each}}
+                                     <br>
+                            <div>
+                <details open>
+                         <summary><ins><strong>Projects :</strong></ins></summary>
+                     <dl>
+                        {{#each projects}}
+                        <dd>
+                            <b>Name: </b> <ins>{{name}}</ins>
+                        </dd>
+                        <dd>
+                            <b>Description: </b> <ins>{{description}}</ins>
+                        </dd>
+                        <dd>
+                            <b>Technologies: </b> <ins>{{technologies}}</ins>
+                        </dd>
+                         <dd>
+                            <ins><strong>Projects :</strong></ins>
+                            {{#each team_members}}
+                            <li>{{name}}</li>
+                             <li>{{title}}</li>
+                            {{/each}}
+                        </dd>
+                            </div>
+            </details>
+             {{/each}}
+                        </dd>
+                       
+     {{/each}}
+                     </dl>
+        </details>
+    </dd>
+    {{/each}}
+    </dl>
+        </details>
+    </dd>
+    {{/each}}
+    </dl>
+
+</section>
+{{/each}}
+</details>
+    </section>
+    {{/each}}
+
+<br>
+<hr>
+<br>
+
+
+{{/with}}  
+
+</main>
