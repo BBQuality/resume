@@ -1,9 +1,11 @@
 
 <main>
-    
+
 <hr>
  <section>  
-
+    {{#each item}}
+    {{> this.title={{title}} }}
+    {{/each}}
 <dl>
     <dt>
          <h2>Name : <ins>{{name}} </ins></h2>
