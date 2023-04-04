@@ -53,8 +53,8 @@ router.get('/', function (req, res) {
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/summary', function (req, res) {
-
   res.render('summary', {
+    layout: 'basic',
     title,
 
     header,
@@ -78,6 +78,7 @@ router.get('/summary', function (req, res) {
 
 router.get('/skills', function (req, res) {
   res.render('skills', {
+    layout: 'basic',
     title,
 
     header,
@@ -142,6 +143,7 @@ router.get('/skills', function (req, res) {
 
 router.get('/education', function (req, res) {
   res.render('education', {
+    layout: 'basic',
     title,
 
     header,
@@ -256,11 +258,10 @@ router.get('/work', function (req, res) {
   })
 })
 
-//              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    layout: 'basic',
 
     title: "Person Info.",
     person: {
@@ -358,10 +359,9 @@ router.get('/person', function (req, res) {
 })
 
 router.get('/bio', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', 
   {
-    layout: 'bio',
+    layout: 'basic',
     title: 'Biography',
 
     name: 'Albert Einstein',
@@ -455,11 +455,10 @@ router.get('/bio', function (req, res) {
   })
 })
 
-
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    layout: 'program',
+    layout: 'basic',
     title: 'Events Program',
     program: {
       excursion: {
@@ -544,7 +543,7 @@ router.get('/program', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: 'web',
+    layout: 'basic',
     web: {
       languages: [
         {
