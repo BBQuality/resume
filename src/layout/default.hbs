@@ -7,13 +7,14 @@
 
 <head>
   <title>
-    {{title.title}}
+    {{title}}
   </title>
   <meta charset='utf-8' />
   <link href='css/index.css' rel='stylesheet' />
 </head>
-
+ 
 <body>
+
   <header>
     {{#with header}}
     <div>
@@ -34,10 +35,15 @@
     <hr>
     {{/with}}
   </header>
-  <div>
+     <div>
     {{> nav}}
   </div>
-  {{{body}}}
+  <main>
+ 
+  {{{body}}} 
+
+  </main>
+
   <footer>
     {{> footer}}
   </footer>

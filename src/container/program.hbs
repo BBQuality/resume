@@ -1,0 +1,109 @@
+<main>
+    {{> title data="Excursion : " big=true}} 
+<br>
+                {{#with program.excursion}}
+    <section>
+<dl>
+    <dt>
+        <ins>
+            <h3>
+                {{name}}
+            </h3>
+        </ins>
+        {{#with location}}
+    </dt>
+    <dd>
+        <b>Location : </b> <i>{{city}}, {{country}}</i>
+    </dd>
+    {{/with}}
+    <dd>
+        <b>Date : </b> <i>{{date}}</i>
+    </dd>
+ 
+
+<br>
+<hr>
+<br>
+</section>
+<section>
+        <dt>
+            <ins> {{> title data="Program : " big=false}} </ins>
+        </dt>
+{{#with program.[0]}}
+
+<dl>
+    <dd>
+        <ol><b>Event title name : </b> <ins><strong>{{name}}</strong></ins></ol>
+        <ol><b>Event type : </b> <ins><strong>{{type}}</strong></ins></ol>
+        <ol><b>Duration : </b> <ins><strong>{{duration}}</strong></ins></ol>
+    </dd>
+</dl> 
+{{#with details.museum}}
+      <details open>
+            <summary>
+                <ins><strong>Addresses :</strong></ins>
+            </summary>
+            <dl>   
+                {{#with location}}
+     <dd>   
+       <ol><ins><strong>City </strong></ins>  -  <ins>{{city}}, {{country}}</ins></ol>
+        <ol><ins><strong>Address </strong></ins>  -  <ins>{{address}}</ins></ol>
+    </dd>
+    {{/with}}
+    </dl>
+</details>
+
+<br>
+<hr>
+<br>
+
+<details open>
+            <summary>
+                <ins><strong>Exhibits :</strong></ins>
+            </summary>
+<dl>   
+    {{#each exhibits}}
+<dd>
+    <ol><strong>Exhibit : </strong>  -  <i>{{name}}</i></ol>
+    <ol><strong>Author : </strong>  -  <i>{{artist}}</i></ol>
+    <ol><strong>Information : </strong> - <i>{{description}}</i></ol> 
+</dd>
+<br>
+{{/each}}
+{{/with}}
+
+{{#with details.guide}}
+<dd>
+    <ul><strong>Audio Guide : </strong> </ul>
+    <ol><strong>Title : {{name}}</strong> </ol>
+    <ol><strong>Language : {{language}}</strong> </ol>
+    <ol><strong>Rating : {{rating}}</strong> </ol>
+</dd>
+{{/with}}
+</dl> 
+</details>
+       {{/with}} 
+       <br>
+       <hr>
+       <br>
+<section>
+<dl>
+        <dt>
+          <ins>{{> title data="Next Program Event : " big=false}}</ins>
+        </dt>
+{{#with program.[1]}}
+
+<dl>
+    <dd>
+        <ol><b>Event title name : </b> <ins><strong>{{name}}</strong></ins></ol>
+        <ol><b>Event type : </b> <ins><strong>{{type}}</strong></ins></ol>
+        <ol><b>Duration : </b> <ins><strong>{{duration}}</strong></ins></ol>
+    </dd>
+</dl> 
+
+       </dl>
+       </section>
+{{/with}}
+
+{{/with}}
+</main>
