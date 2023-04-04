@@ -79,7 +79,7 @@ router.get('/summary', function (req, res) {
 router.get('/skills', function (req, res) {
   res.render('skills', {
     title,
-
+    new,
     header,
 
     main: {
