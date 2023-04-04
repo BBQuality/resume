@@ -1,14 +1,52 @@
+{{!--
+Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
+І котрий обгортає код container файлів для будь-яких ендпоїнтів
+--}}
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>
-    {{header.title}}
+    {{title}}
   </title>
   <meta charset='utf-8' />
   <link href='css/index.css' rel='stylesheet' />
 </head>
+ 
 <body>
-  {{{body}}}
+
+  <header>
+    {{#with header}}
+    <div>
+      <h1>{{title}} | {{name.firstname}} {{name.lastname}} </h1>
+    </div>
+    <div>
+      <b>{{position}}</b>
+    </div>
+    <br>
+    <div>
+      <em>{{salary}}</em>
+    </div>
+    <br>
+    <div>
+      <em>{{address}}</em>
+    </div>
+    <br>
+    <hr>
+    {{/with}}
+  </header>
+     <div>
+    {{> nav}}
+  </div>
+  <main>
+ 
+  {{{body}}} 
+
+  </main>
+
+  <footer>
+    {{> footer}}
+  </footer>
 </body>
+
 </html>
