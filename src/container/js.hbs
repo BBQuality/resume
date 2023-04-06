@@ -1,3 +1,69 @@
 <main>
-    
+    <br>
+    <hr>
+    <br>
+<div>
+    <div>
+            <dl>
+                <dt>
+                    <h3>Title : <ins>{{name}}</ins></h3>
+            </dt>
+            <dt>
+                <strong>Description : </strong> <p>{{description}}</p>
+            </dt>
+            <dt>
+                <strong><ins>History :</ins></strong>
+            </dt>
+            <dd>
+                <p>Foundary year : {{history.year}}</p>
+            </dd>
+             <dd>
+                <p>Foundar : {{history.founder}}</p>
+            </dd>
+            <dd>
+    <details open>
+        <summary>
+                <ins><strong>Types :</strong></ins>
+        </summary>
+{{#each types}} 
+            <dl>
+     <dd>
+        <li>{{this}}</li>
+     </dd>
+     </dl>
+     {{/each}}
+    </details>
+</dd>
+</div>
+
+<div>
+<details>
+        <summary>
+                <ins><strong>Syntax :</strong></ins>
+        </summary>
+                {{#with syntax}}
+                <dl>
+            <dd>
+                <ins>Variables</ins> :
+                {{#each variables}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>           
+            </dl>
+          {{/with}}
+    </details>
+    </div>
+
+</div>
+<br>
+<hr>
+<br>
+
+<div>
+
+</div>
+
+<br>
+<hr>
+<br>
 </main>
