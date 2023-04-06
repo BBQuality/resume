@@ -1,27 +1,48 @@
 <main>
     <br>
+    <div>
+        <div>
+                <button type="button" class="btn btn-outline-dark">
+                        <p class="display-2">{{name}}</p>
+                </button>
+        </div>
+    </div>
+    <br>
     <hr>
     <br>
 <div>
     <div>
-            <dl>
-                <dt>
-                    <h3>Title : <ins>{{name}}</ins></h3>
-            </dt>
-            <dt>
-                <strong>Description : </strong> <p>{{description}}</p>
-            </dt>
-            <dt>
-                <strong><ins>History :</ins></strong>
-            </dt>
+        <div>
+                <button type="button" class="btn btn-outline-success" disabled>
+                        <p class="display-5">Title</p>
+                </button> :
+                <button type="button" class="btn btn-outline-primary">
+                        <p class="display-5">{{name}}</p>
+                </button>
+        </div>
+     </div>
+        <div>
+            <div>
+                <p class="fw-bold"><button type="button" class="btn btn-outline-info" disabled>Description :</button> {{description}}</p>
+            </div>
+        </div>
+<div>
+          <div>
+                <p class="fw-bold"><button type="button" class="btn btn-outline-warning" disabled>History :</button></p>
+            </div>
+</div>
+ <div>
+            <div>
+                <p class="fw-bold"><button type="button" class="btn btn-outline-danger" disabled>Foundary year :</button> <button type="button" class="btn btn-outline-primary">{{history.year}}</button></p>
+            </div>
+        </div>
+         <div>
+            <div>
+                <p class="fw-bold"><button type="button" class="btn btn-outline-dark" disabled>Foundary :</button> <button type="button" class="btn btn-primary">{{history.founder}}</button></p>
+            </div>
+        </div>      
             <dd>
-                <p>Foundary year : {{history.year}}</p>
-            </dd>
-             <dd>
-                <p>Foundar : {{history.founder}}</p>
-            </dd>
-            <dd>
-    <details open>
+    <details >
         <summary>
                 <ins><strong>Types :</strong></ins>
         </summary>
@@ -48,22 +69,87 @@
                 {{#each variables}}
                    <i>{{this}}</i> 
                    {{/each}}
-            </dd>           
+            </dd>     
+               <dd>
+                <ins>Functions</ins> :
+                {{#each functions}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>
+               <dd>
+                <ins>Conditionals</ins> :
+                {{#each conditionals}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>   
+                           <dd>
+                <ins>Loops</ins> :
+                {{#each loops}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd>     
+                         <dd>
+                <ins>Classes</ins> :
+                {{#each classes}}
+                   <i>{{this}}</i> 
+                   {{/each}}
+            </dd> 
             </dl>
           {{/with}}
     </details>
     </div>
+<dl>
+    <dd>
+         <details>
+        <summary>
+                <ins><strong>Features :</strong></ins>
+        </summary>
+{{#each features}} 
 
+        <li>{{this}}</li>
+
+     {{/each}}
+    </details>
+    </dd>
+    <dd>
+         <details>
+        <summary>
+                <ins><strong>Libraries :</strong></ins>
+        </summary>
+{{#each libraries}} 
+
+        <li>{{this}}</li>
+
+     {{/each}}
+    </details>
+    </dd>
+    <dd>
+         <details>
+        <summary>
+                <ins><strong>Tools :</strong></ins>
+        </summary>
+{{#each tools}} 
+
+        <li>{{this}}</li>
+
+     {{/each}}
+    </details>
+    </dd>
+</dl>
 </div>
 <br>
 <hr>
-<br>
-
 <div>
-
+        {{#each community}}
+        <div>
+                <button type="button" class="btn btn-outline-info" disabled>Name :</button> <button type="button" class="btn btn-success" disabled>{{name}}</button>
+                </div>
+                <div>
+                <button type="button" class="btn btn-outline-info" disabled>Type :</button> <button type="button" class="btn btn-success" disabled>{{type}}</button>
+        </div>
+        <hr>
+        {{/each}}
 </div>
 
-<br>
-<hr>
 <br>
 </main>
