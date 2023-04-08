@@ -1,0 +1,453 @@
+<main>
+    <div class="row">
+    <div class="bg-secondary"> 
+        <div class="border-outline-info">
+        <p class="display-5">{{name}}</p>
+        </div>
+    </div>
+    </div>
+    <div>
+    <table>
+        <tr>
+            <td><img src="https://content2.rozetka.com.ua/goods/images/big/229715713.jpg" alt="MacBookPro"></td>
+            <td>
+                <table>
+          
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Категорія: </button></td>
+                <td> {{category}}</td>
+            </tr>
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Операційна система: </button></td>
+                <td> {{features.operating_system}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Ціна: </button></td>
+                <td> {{price}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Опис: </button></td>
+               <td> {{description}}</td>    
+            </tr>
+            </table>
+            </td>
+        </tr>
+    
+    </table>
+    </div>
+
+<div>
+   
+    <table>
+        <tr>
+            <td>
+                 {{#with features.processor}}
+                 <table>
+                    <tr>
+                        <td>Процесор:</td>
+                    </tr>
+          
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Назва: </button></td>
+                <td> {{brand}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Модель: </button></td>
+                <td> {{model}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Потужність: </button></td>
+               <td> {{speed}}</td>    
+            </tr>
+            <tr>
+                        <td><button type="btn" class="btn btn-secondary">Ядер: </button></td>
+               <td> {{cores}}</td>    
+            </tr>
+              <tr>
+                        <td><button type="btn" class="btn btn-secondary">Буфер: </button></td>
+               <td> {{cache}}</td>    
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+            </table>
+            {{/with}}
+            </td>
+            <td>
+                {{#with features.memory}}
+                <table>
+                    <tr>
+                        <td>Пам'ять:</td>
+                    </tr>
+          
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Тип: </button></td>
+                <td> {{type}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Розмір: </button></td>
+                <td> {{size}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Швидкість: </button></td>
+               <td> {{speed}}</td>    
+            </tr>
+            <tr>
+                <td> 
+                    <br>
+                </td>
+                <td></td>
+            </tr>
+             <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+             <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+            </table>
+             {{/with}}
+            </td>
+
+                      <td>
+                        {{#with features.storage}}
+                <table>
+          <tr>
+            <td>Сховище:</td>
+          </tr>
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Тип носія: </button></td>
+                <td> {{type}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Об'єм сховища: </button></td>
+                <td> {{size}}</td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+            
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+            
+            </table>
+             {{/with}}
+            </td>
+
+                      <td>
+                <table>
+                    {{#with features.display}}
+          <tr>
+            <td>Дісплей:</td>
+          </tr>
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Розмір дісплея: </button></td>
+                <td> {{size}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Роздільна здатність: </button></td>
+                <td> {{resolution}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Виробник: </button></td>
+               <td> {{technology}}</td>    
+            </tr>
+              <tr>
+                        <td><button type="btn" class="btn btn-secondary">Схема кольору: </button></td>
+               <td> {{color_space}}</td>    
+            </tr>
+              <tr>
+                        <td><button type="btn" class="btn btn-secondary">Яскравість: </button></td>
+               <td> {{brightness}}</td>    
+            </tr>
+            <tr>
+                        <td><button type="btn" class="btn btn-secondary">Частота оновлення: </button></td>
+               <td> {{refresh_rate}}</td>    
+            </tr>
+            {{/with}}
+            </table>
+            </td>
+              <td>
+                <table>
+                    {{#with features.graphics}}
+          <tr>
+            <td>Графіка:</td>
+          </tr>
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Виробник: </button></td>
+                <td> {{brand}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Модель: </button></td>
+                <td> {{model}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Об'єм пам'яті: </button></td>
+               <td> {{memory}}</td>    
+            </tr>
+                 <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                 <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                 <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                 <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                 <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+            
+            {{/with}}
+            </table>
+            </td>
+        </tr>
+        
+    
+    </table>
+    </div>
+
+
+    
+<div>
+        <table>
+        <tr>
+            <td>
+                 {{#with features}}
+                
+                 <table>
+                    
+                    <tr>
+                        <td>Порти:</td>
+                    </tr>
+          
+             <tr> {{#each ports}}
+                <td><button type="btn" class="btn btn-secondary">Тип: </button></td>
+                <td> {{type}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Кількість: </button></td>
+                <td> {{count}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Перелік: </button></td>
+               <td>
+                {{#each features}}
+                 <li>{{this}}</li>
+                 {{/each}}</td>    
+            </tr>
+         
+         {{/each}}
+            </table>
+           
+            {{/with}}
+            </td>
+            <td>
+                {{#with features.battery}}
+                <table>
+                    <tr>
+                        <td>Батарея:</td>
+                    </tr>
+          
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Тип: </button></td>
+                <td> {{type}}</td>
+            </tr>
+            <tr>
+                <td><button type="btn" class="btn btn-primary">Ємність: </button></td>
+                <td> {{capacity}}</td>
+            </tr>
+                      <tr>
+                        <td><button type="btn" class="btn btn-secondary">Без заряду: </button></td>
+               <td> {{life}}</td>    
+            </tr>
+            <tr>
+                <td> 
+                    <br>
+                </td>
+                <td></td>
+            </tr>
+             <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+             <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+            </table>
+             {{/with}}
+            </td>
+
+                      <td>
+                        {{#with features}}
+                <table>
+          <tr>
+            <td>Розмір та вага:</td>
+          </tr>
+             <tr>
+                <td><button type="btn" class="btn btn-secondary">Вага: </button></td>
+                <td> {{weight}}</td>
+            </tr>
+             {{#with dimensions}}
+            <tr>
+                <td><button type="btn" class="btn btn-primary"> Висота : </button></td>
+                <td> {{height}}</td>
+            </tr>
+                <tr>
+                <td><button type="btn" class="btn btn-primary"> Ширина : </button></td>
+                <td> {{width}}</td>
+            </tr>
+                <tr>
+                <td><button type="btn" class="btn btn-primary"> Довжина : </button></td>
+                <td> {{depth}}</td>
+            </tr>
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+            
+               <tr>
+                <td>
+                    <br>
+                 </td>
+                <td></td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+                <tr>
+                <td> 
+                    <br>
+                    </td>
+                <td> </td>
+            </tr>
+            {{/with}}
+            </table>
+             {{/with}}
+            </td>
+
+                      <td>
+                <table>
+                    {{#with features}}
+          <tr>
+            <td>Аксесуари:</td>
+          </tr>
+         
+             <tr> {{#each accessories}}
+                <td><button type="btn" class="btn btn-primary">Назва: </button></td>
+                <td> {{name}}</td>
+                <td><button type="btn" class="btn btn-success">{{price}}</button>  </td>
+            </tr>
+                    {{/each}}
+            {{/with}}
+            </table>
+            </td>
+        </tr>
+        
+    
+    </table>
+</div>
+</main> 
