@@ -1,4 +1,12 @@
 <main>
+<div>
+         <table>
+    <tr>
+        <td>Ф</td>
+        <td>о</td>
+        <td>т</td>
+        <td>о</td>
+        <td>
     <div>
         <div>
 <diV class="display-3">
@@ -15,8 +23,90 @@
 <hr>
 <diV class="display-6">
     Колір :  <button type="button" class="btn btn-secondary btn-sm">{{color}}</button>
-</diV>
+</diV>  
+</div>
+</div>
+  </td>
+    </tr>
+    </table>
+</div>
 <hr>
+<br>
+<div class="row">
+    <div class="bg-secondary"> 
+        <div class="border-outline-info">
+        <p class="display-5">Технології</p>
+        </div>
+    </div>
+    </div>
+<div>
+        {{#with engine}}
+<table>   
+ 
+    <tr>
+        <td>Тип палива:</td>
+        <td>{{type}}</td>
+    </tr>
+     <tr>
+        <td>Об'єм двигуна:</td>
+        <td>{{displacement}}</td>
+    </tr>
+     <tr>
+        <td>Потужність:</td>
+        <td>{{horsepower}}</td>
+    </tr>
+         <tr>
+        <td>Крутний момент:</td>
+        <td>{{torque}}</td>
+    </tr>   
+           <tr>
+        <td>Трансмісія:</td>
+        <td>{{transmission.type}}</td>
+    </tr> 
+       <tr>
+        <td>Кількість передач:</td>
+        <td>{{transmission.gears}}</td>
+    </tr> 
+
+</table>
+    {{/with}}
+ 
+</div>
+
+<hr>
+<br>
+<div class="row">
+    <div class="bg-secondary"> 
+        <div class="border-outline-info">
+        <p class="display-5">Росхід палива</p>
+        </div>
+    </div>
+    </div>
+<div>
+        {{#with fuel_economy}}
+<table>   
+ 
+    <tr>
+        <td>Місто:</td>
+        <td>{{city}}</td>
+    </tr>
+     <tr>
+        <td>На трасі:</td>
+        <td>{{highway}}</td>
+    </tr>
+     <tr>
+        <td>Змішаний:</td>
+        <td>{{combined}}</td>
+    </tr>
+
+</table>
+    {{/with}}
+ 
+</div>
+
+<br>
+<hr>
+<br>
 <div class="row">
     <div class="bg-secondary"> 
         <div class="border-outline-info">
@@ -24,6 +114,7 @@
         </div>
     </div>
     </div>
+
 
             <div>
             {{#with features.interior}}
@@ -185,10 +276,180 @@
         <button type="button" class="btn btn-danger btn-sm">Ні</button>
         {{/if}}
         </td>
-        <td>Динаміки</td>
-        <td>Динаміки</td>
+        <td>Автоматичне руглювання</td>
+        <td>{{#if headlights.automatic}}
+        <button type="button" class="btn btn-success btn-sm">Так</button>
+        {{else}}
+        <button type="button" class="btn btn-danger btn-sm">Ні</button>
+        {{/if}}</td>
     </tr>
+
+    <br>
+<hr>
+<br>
 
 </table>
 {{/with}}
+<div class="row">
+    <div class="bg-secondary"> 
+        <div class="border-outline-info">
+        <p class="display-5">Безпека</p>
+        </div>
+    </div>
+</div>
+{{#with features.safety}}
+<table>
+        <tr class="border">
+        <td></td>
+        <td class="border"></td>
+        <td>Подушки</td>
+        <td> безпеки</td>
+        <td></td>
+        <td></td>
+         <td></td>
+        <td></td>
+    </tr>
+    <tr class="border">
+        <td></td>
+        <td class="border">Передні</td>
+        <td></td>
+        <td>Задні</td>
+        <td></td>
+        <td>Коліно</td>
+         <td></td>
+        <td>Бокові</td>
+    </tr>
+    <tr class="border">
+        <td>Кількість</td>
+        <td>{{airbags.front}}</td>
+        <td>Кількість</td>
+        <td>{{airbags.side}}</td>
+        <td>Кількість:</td>
+        <td>{{airbags.knee}}</td>
+        <td>Кількість:</td>
+        <td>{{airbags.rear}}</td>
+    </tr>
+</table>
+<br>
+<hr>
+<br>
+<table>
+        <tr class="border">
+        <td>Додаткові функції:</td>
+        <td class="border"></td>
+    
+    </tr>
+    <tr class="border">
+        <td>Моніторинг сліпих зон: </td>
+        <td class="border">{{#if assistance.blind_spot_monitoring}}
+        <button type="button" class="btn btn-success btn-sm">Так</button>
+        {{else}}
+        <button type="button" class="btn btn-danger btn-sm">Ні</button>
+        {{/if}}</td>
+    </tr>
+    <tr class="border">
+        <td>Відстеження ситуації ззаду:</td>
+        <td>
+            {{#if assistance.rear_cross_traffic_alert}}
+        <button type="button" class="btn btn-success btn-sm">Так</button>
+        {{else}}
+        <button type="button" class="btn btn-danger btn-sm">Ні</button>
+        {{/if}}
+        </td>
+
+    </tr>
+       <tr class="border">
+        <td>Попередження про виїзд зі смуги руху:</td>
+        <td>
+            {{#if assistance.lane_departure_warning}}
+        <button type="button" class="btn btn-success btn-sm">Так</button>
+        {{else}}
+        <button type="button" class="btn btn-danger btn-sm">Ні</button>
+        {{/if}}
+        </td>
+
+    </tr>
+           <tr class="border">
+        <td>Адаптивний круіз-корнтрол:</td>
+        <td>
+            {{#if assistance.adaptive_cruise_control}}
+        <button type="button" class="btn btn-success btn-sm">Так</button>
+        {{else}}
+        <button type="button" class="btn btn-danger btn-sm">Ні</button>
+        {{/if}}
+        </td>
+
+    </tr>
+               <tr class="border">
+        <td>Попередження про зіткнення:</td>
+        <td>
+            {{#if assistance.adaptive_cruise_control}}
+        <button type="button" class="btn btn-success btn-sm">Так</button>
+        {{else}}
+        <button type="button" class="btn btn-danger btn-sm">Ні</button>
+        {{/if}}
+        </td>
+
+    </tr>
+</table>
+{{/with}}
+
+<hr>
+<br>
+<div class="row">
+    <div class="bg-secondary"> 
+        <div class="border-outline-info">
+        <p class="display-5">Ціни</p>
+        </div>
+    </div>
+    </div>
+<div>
+        {{#with price}}
+<table>   
+ 
+    <tr>
+        <td>Базова комплектація:</td>
+        <td>{{base}} $</td>
+    </tr>
+     <tr>
+        <td>Додатково:</td>
+        <td>{{destination}}</td>
+    </tr>
+     <tr>
+        <td></td>
+        <td>Опції:</td>
+        <td></td>
+    </tr>
+      <tr>
+        <td>GPS:</td>
+        <td>{{options.navigation}}</td>
+        <td></td>
+    </tr>
+
+      <tr>
+        <td>Люк:</td>
+        <td>{{options.moonroof}}</td>
+        <td></td>
+    </tr>
+         <tr>
+        <td>Преміум колір:</td>
+        <td>{{options.premium_paint}}</td>
+        <td></td>
+    </tr>
+  <tr>
+        <td><div class="row">
+    <div class="bg-secondary"> 
+        <div class="border-outline-info">
+        Максимальний кошторис:
+        </div>
+    </div>
+    </div>
+    </td>
+    <td></td>
+        <td>{{total}}</td>
+    </tr>
+</table>
+    {{/with}}
+ 
+</div>
 </main>
