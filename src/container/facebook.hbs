@@ -1,0 +1,79 @@
+<main>
+    <div>
+    <p class="fs-1">{{name}}</p>
+    {{#each users}}
+    
+    <table class="border ">
+        <tr class="border">
+            <td>
+                <div><ins class="fs-3 bg-success">Друзі:</ins> </div>
+<p class="fw-semibold">ID:{{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+</td>
+<td>
+    <table class="border">
+        <tr class="border">
+            <td></td>{{#each friends}}
+            <td class="border">
+             <div><ins class="fs-3 bg-primary">Cпільні друзі:</ins> </div>  
+
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+            </td>{{/each}} {{#with friends.[0]}}
+{{#each mutual_friends}}
+            <td class="border">
+                <div><ins class="fs-3 bg-secondary"> Ви можете їх знати:</ins> </div> 
+               
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+
+</td>{{/each}}
+{{/with}}
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<hr>
+</div>
+{{/each}}
+
+<table class="border">
+    <tr class="border">
+        <td class="border"><ins class="fs-3 bg-success">Групи:</ins></td>
+        <td></td>
+        <td class="border"><p class="fw-normal">Користувачі: </p></td>
+    </tr>
+    {{#each users.[0].groups}}
+    <tr class="border">
+        <td></td>
+        <td class="border">
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Назва: {{name}}</p>
+<p class="fw-medium">Опис: {{description}}</p>
+
+        </td>
+        {{#each members}}
+        <td class="border">
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+
+        </td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</table>
+
+</main>
