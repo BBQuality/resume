@@ -1,0 +1,114 @@
+<main>
+{{!-- початок частина navigation --}}
+{{#with navigation}}
+<section>
+    <div class="row">
+        <div  class="card">  
+                <div  class="card-body text-center"> 
+                    {{#each links}}
+                    <a class="btn btn-link" href="{{href}}">{{text}}</a>
+                    {{/each}}
+                    <a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+        </div>
+        </div>  
+    </div>
+</section>
+{{/with}}
+{{!-- кінцева частина navigation --}}
+<hr>
+<br>
+{{!-- початок частина header --}}
+
+{{#with header}}
+<section>
+    <div class="row">
+        <div >   
+                    <h1 class="text-center text-uppercase">{{title}}</h1>
+                    <p class="fs-5 text-center">{{description}}</p>
+                    <a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+        </div>  
+    </div>
+</section>
+{{/with}}
+<br>
+<hr>
+<br>
+{{!-- кінцева частина header --}}
+
+{{!-- початок частина city --}}
+
+{{#with city}}
+<section>
+    <div class="row text-center  text-uppercase g-2">
+      <div>
+        <h2>{{title}}</h2>
+        </div> 
+        <br>
+        <br>
+        <br>
+        {{#each cards}}
+        <div class="col-6">   
+            <div class="card">
+                <div class="card-img-top text-center">
+                    {{#with picture}}
+                    <img src="{{src}}" alt="{{alt}}">
+                    {{/with}}
+                </div>
+                <div class="card-title text-center">
+                    <p class="display-6">{{title}}</p>
+                </div>
+                <div class="card-body text-center">
+                    <p class="fs-6">{{description}}</p>
+                    <a class="btn btn-primary" href="{{button.href}}">{{button.text}}</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
+{{/with}}
+<br>
+<hr>
+{{!-- кінцева частина city --}}
+
+
+{{!-- початок частина winner - це таблиця --}}
+<div class="row">
+    {{#with winner}}
+    <h2 class="text-center text-uppercase">{{title}}</h2>
+    <div class="col-5">
+
+<div class="card">
+    <div class="card-body">
+<table class="table table-striped bg-success">
+<thead>
+    {{#each table.head}}
+<th>{{this}}</th>
+{{/each}}
+</thead>
+
+<tbody>
+    {{#each table.user}}
+    <tr>
+        <td>{{place}}</td>
+        <td>{{name}}</td>
+        <td>{{surname}}</td>
+        <td>{{nickname}}</td>
+    </tr>
+    {{/each}}
+</tbody>
+
+</table>
+</div>
+</div>
+</div>
+{{/with}}
+</div>
+{{!-- кінцева частина city --}}
+<hr>
+<br>
+
+{{!-- початок частина galllery - це list-item --}}
+
+{{!-- кінцева частина galllery - це list-item --}}
+</main>
