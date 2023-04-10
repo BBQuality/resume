@@ -1,0 +1,105 @@
+<main>
+<hr>
+    {{!-- початок виводимо всі дані з heading.main --}}
+{{#with heading.main}}
+<div class="card">
+<div class="card-body">
+<h1 class="text-uppercase text-center">{{title}}</h1>
+<p class="text-center text-primary">{{text}}</p>
+<div>
+<button type="button" class="btn btn-primary btn-sm">{{button_text.solid}}</button>
+<button type="button" class="btn btn-outline-secondary btn-sm">{{button_text.outline}}</button>
+</div>
+</div>
+</div>
+{{/with}}
+{{!-- кінцева частина heading.main --}}
+<br>
+<hr>
+
+    {{!-- початок виводимо всі дані з heading.second --}}
+{{#with heading.second}}
+<hr>
+<div class="card">
+<div class="card-body">
+<h2 class="text-uppercase text-end text-primary">{{title}}</h1>
+<p class="text-end text-success">{{text}}</p>
+<div>
+<button type="button" class="btn btn-primary btn-sm">{{button_text.solid}}</button>
+<button type="button" class="btn btn-outline-secondary btn-sm">{{button_text.outline}}</button>
+</div>
+</div>
+</div>
+{{/with}}
+{{!-- кінцева частина heading.second --}}
+<br>
+<hr>
+
+    {{!-- початок виводимо всі дані з heading.subblock --}}
+{{#with heading.subblock}}
+<hr>
+<div class="card">
+<div class="card-body">
+<h3 class="text-uppercase text-warning">{{title}}</h1>
+<p class="text-end text-danger">{{text}}</p>
+<div>
+<button type="button" class="btn btn-primary btn-sm">{{button_text.solid}}</button>
+<button type="button" class="btn btn-outline-secondary btn-sm">{{button_text.outline}}</button>
+</div>
+</div>
+</div>
+{{/with}}
+{{!-- кінцева частина heading.subblock --}}
+<br>
+<hr>
+
+    {{!-- початок виводимо всі дані з nested_display.children_display --}}
+{{#with nested_display}}
+<hr>
+<div class="card">
+    <div class="card-body">
+    <p class="text-center display-1 text-uppercase text-success">{{title}}</p>
+<div class="card">
+<div class="card-body">
+    {{#with children_display}}
+<h3 class="text-uppercase text-warning">{{title}}</h1>
+<p class="text-end text-danger">{{text}}</p>
+<button type="button" class="btn btn-outline-warning btn-sm">{{button.text}}</button>
+{{/with}}
+</div>
+</div>
+<h6 class=" text-info">{{header_text}}</h6>
+<button type="button" class="btn btn-info text-light">{{button.text}}</button>
+</div>
+</div>
+{{/with}}
+{{!-- кінцева частина nested_display.children_display --}}
+<br>
+<hr>
+ {{!-- початок виводимо всі дані з paragraph --}}
+
+{{#with paragraph}}
+<div class="card">
+<div class="card-body">
+
+<p class="text-center text-uppercase text-success fs-4">{{title}}</p>
+<p class=" text-secondary fs-6">{{text}}</p>
+
+<a href="{{button.url}}">{{button.text}}</a>
+<br>
+<br>
+    <div class="card">
+<div class="card-body">
+    {{#each list_name}}
+   <li><a href="{{url}}">{{text}}</a></li> 
+   <br>
+    {{/each}}
+</div>
+</div>
+
+</div>
+</div>
+{{/with}}
+{{!-- кінцева частина paragraph --}}
+
+</main>
