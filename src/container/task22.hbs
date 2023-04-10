@@ -1,0 +1,95 @@
+<main>
+
+{{#with page_header}}
+<h1 class="text-center">{{title}}</h1>
+<p class="text-center text-uppercase text-primary">{{description}}</p>
+    {{!-- початок виводимо всі дані з page_header.section --}}
+{{/with}}
+<div class="card">
+<div class="card-body">
+    {{#with section.about_us}}
+<p class="text-center display-6 ">{{title_list.main}}</p>
+<h2 class="text-center text-uppercase text-primarytext-end">{{title_list.sub}}</h2>
+<button type="button" class="btn btn-outline-info btn-lg">{{button.text}}</button>
+{{/with}}
+</div>
+</div>
+
+{{!-- кінцева частина page_header.section --}}
+
+<br>
+<hr>
+    <div class="card">
+<div class="card-body">
+   {{!-- початок виводимо всі дані з section.efficiency --}}
+{{#with section.advantage}}
+<p class="display-5">{{title}}</h1>
+ 
+
+<div class="card">
+<div class="card-body">
+    {{#with efficiency}}
+<p class="display-4 text-start">{{title}}</p>
+<h6 class="text-primary text-start">{{sub_title}}</h2>
+<p class="fs-6 text-start">{{description}}</p>
+<button type="button" class="btn btn-outline-warning btn-lg">{{button}}</button>
+{{/with}}
+</div>
+</div>
+
+<br>
+ {{!-- початок виводимо всі дані з section.innovation --}}
+<div class="card">
+<div class="card-body">
+     {{#with innovation}}
+<p class="display-4 text-center">{{title}}</p>
+<h6 class="text-primary text-center">{{sub_title}}</h2>
+<p class="text-center fs-6">{{description}}</p>
+<button type="button" class="btn btn-outline-warning btn-lg">{{button}}</button>
+{{/with}}
+</div>
+</div>
+
+<br>
+ {{!-- початок виводимо всі дані з section.collaboration --}}
+<div class="card">
+<div class="card-body">
+     {{#with collaboration}}
+<p class="display-4 text-end">{{title}}</p>
+<h6 class="text-primary text-end">{{sub_title}}</h2>
+<p class="text-end fs-6">{{description}}</p>
+<button type="button" class="btn btn-outline-warning btn-lg">{{button}}</button>
+{{/with}}
+</div>
+</div>
+{{/with}}
+{{!-- кінцева частина section.advantage --}}
+</div>
+</div>
+<br>
+<hr>
+   {{!-- початок виводимо всі дані з section.agreement --}}
+<div class="card">
+<div class="card-body">
+
+{{#with section.agreement}}
+<p class="display-5">{{title}}</h1>
+ 
+
+<div class="card">
+<div class="card-body">
+{{#with info}}
+<h5 class="display-4 text-start">{{sub_title}}</h5>
+<div class="card">
+<div class="card-body">
+<p class="fs-6 text-start">{{detail.text}}</p>
+<button type="button" class="btn btn-success btn-lg">{{detail.button}}</button>
+</div>
+</div>
+{{/with}}
+</div>
+</div>
+{{/with}}
+</div>
+</div>
+</main>
