@@ -1,0 +1,17 @@
+<main>
+    {{#with navigation}}
+<section>
+    <div class="row">
+        <div  class="nav">  
+                <div  class="nav-iten"> 
+                    {{#each links}}
+                    <a class="btn btn-link" href="{{href}}">{{text}}</a>
+                    {{/each}}
+        </div>
+        </div>  
+    </div>
+</section>
+{{/with}}
+
+
+</main>
