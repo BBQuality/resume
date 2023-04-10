@@ -109,6 +109,183 @@
 <br>
 
 {{!-- початок частина galllery - це list-item --}}
+ {{#with gallery}}
+
+ <div class="row">
+    <h2 class="text-center text-uppercase">{{title}}</h2>
+    </div>
+<div class="card">
+  {{#each cards}}
+    <div class="card-header">
+    <div>{{name}}</div>
+    </div>
+<ul class="list-group">
+    <li class="list-group-item">
+        <ul class="list-group"> 
+            {{#each items}}
+            <li class="list-group-item">
+        <p>{{this}}</p>
+        </li> 
+        {{/each}}
+        </ul>
+    </li>
+    {{/each}}
+</ul>
+
+</div>
+
+{{/with}}
 
 {{!-- кінцева частина galllery - це list-item --}}
+
+<br>
+<hr>
+<br>
+
+{{!-- початок частина relaxion --}}
+
+<section>
+    {{#with relaxion}}
+    <div class="row g-3">
+      <div>
+        <p class="display-3">{{title}}</p>
+        </div> 
+        {{#each cards}}
+        <div class="col-6">   
+            <div class="card text-bg-secondary">
+
+                <div class="card-header text-start">
+                    <p class="fs-1">{{header}}</p>
+                </div>  
+               
+                <div class="card-body">
+                     <div class="card-title text-start">
+                    <p class="fs-4">{{title}}</p>
+                </div>
+                    <p class="fs-6">{{description}}</p>
+                </div>
+                
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+</section>
+
+{{!-- кінцева частина relaxion --}}
+
+<br>
+<hr>
+
+{{!-- початок частина rest --}}
+
+<section>
+    {{#with rest}}
+    <div class="row g-3">
+         {{#each cards}}
+        <div class="col-6">   
+            <div class="card text-center">
+                <div class="card-header text-center">
+                    <p class="fs-1">{{header}}</p>
+                </div>  
+               <div class="card-body text-center">
+                    <p class="card-title fs-4">{{title}}</p>
+              
+                
+                    <span class="fs-6">{{description}}</span>
+                    <br>
+                    <div>
+                    <a class="btn btn-primary">{{button}}</a></div>
+                </div>
+                <div class="card-footer">
+                    <p class="fs-6">{{footer}}</p>
+                </div>
+            </div>
+           
+        </div>
+         {{/each}}
+    </div>
+    {{/with}}
+</section>
+
+{{!-- кінцева частина rest --}}
+
+<br>
+<hr>
+<br>
+
+{{!-- початок частина proposition --}}
+
+<section>
+   
+    <div class="row g-3"> 
+        {{#with proposition}}
+            <div>
+        <p class="display-2">{{title}}</p>
+        </div>
+         {{#each card}} 
+        <div class="col-6">
+             
+            <div class="card text-light bg-warning text-start">
+                <div class="card-header text-start">{{header}}</div>
+               <div class="card-body text-start"> 
+                
+                    <p class="card-title fs-4">{{title}}</p>
+                    <span class="fs-6">{{description}}</span>
+            </div>
+        </div> 
+        
+         </div>
+           {{/each}}
+  
+   
+    {{/with}}
+    </div>
+</section>
+
+{{!-- кінцева частина proposition --}}
+
+<br>
+<hr>
+<br>
+
+{{!-- початок частина footer --}}
+{{#with footer}}
+
+<div class="row">
+    <div class="col-4">
+<ul class="list-group text-center">
+    {{#each navigation}}
+    <li class="list-group-item">
+        <button type="button" class="btn btn-link" href="{{href}}">{{text}}</button>
+        </li> 
+        {{/each}}
+        </ul>
+
+</div>
+
+<div class="col-4">
+    <ul class="list-group text-center">
+    {{#each socialMedia}}
+    <li class="list-group-item">
+        <a class="btn btn-outline-dark" href="{{link}}">{{name}}</a>
+        </li> 
+        {{/each}}
+        </ul>
+</div>
+
+<div class="col-4">
+    <ul class="list-group text-center">
+    {{#each partners}}
+    <li class="list-group-item">
+        <a class="btn btn-outline-info" href="{{link}}">{{name}}</a>
+        </li> 
+        {{/each}}
+        </ul>
+</div>
+
+</div>
+{{/with}}
+{{!-- кінцева частина footer --}}
 </main>
+
