@@ -1,0 +1,146 @@
+<main>
+    <div>
+        <div class="card">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="p-2 bg-success-subtle text-emphasis-success">
+                        <h5 class="pt-5">LOGO</h5>
+                        <section>
+                            <ul class="nav justify-content-end">
+                                <li class=" nav-item">
+                                    <a class="nav-link active" aria-current="page" href="https://github.com/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.google.com/">Contacts</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="https://www.youtube.com/">Help</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link disabled">Logo</a>
+                                </li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url}}
+                <li class="breadcrumb-item">
+                    <a href="{{url}}">{{name}}</a>
+                </li>
+                {{else}}
+                <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
+                {{/if}}
+                {{/each}}
+            </ol>
+        </nav>
+    </div>
+       
+    <div class="row ">
+     {{!-- під'єднуємо дані з ендпоінта тому звертаємось до продукт дата через with тому ще немаэ масива --}}
+          
+            <div class="col-7 ">
+           
+                    {{#with productData}}
+                <div class="card">
+                  
+                    <img src="{{img}}" class="card-img-top" />
+
+                    <div class="card-body">
+                         {{#with info}}
+                        <h5 class="card-title">Назва: {{title}}</h5>
+                        <p class="card-text">Опис: {{about}}</p>
+                        <p class="card-text">Ціна: {{price}}</p>
+                        {{/with}}
+                    </div>
+                   
+                </div> 
+                {{/with}}
+        {{!-- хочеш додати нижче у лівій колонці щось пиши нижче коментарія, я рекомендую починати з 
+        
+        <div class="row">
+            --> сюди вміст який необхідно
+        </div> --}}
+
+        </div>
+
+
+
+      
+
+
+    <div class="col-5 ">
+        <div class="row ">
+        <div class="card border-white">
+            <table class="table">
+                {{#with productData.item}}
+                <thead>
+                    <tr>
+                        {{#each head}}
+                        <th>
+                            {{this}}
+                        </th>
+                        {{/each}}
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each body}}
+                    <tr>
+                        {{#each this}}
+                        <td>
+                            {{this}}
+                        </td>
+                        {{/each}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+                {{/with}}
+            </table>
+        </div>
+    </div>
+   
+<div class="row ">
+    {{#with productData.param }}
+ 
+        <div class="list-group">
+            <div class="card-header">{{title}}</div>
+            {{#each list}}
+            <div class="list-group-item">{{this}}</div>
+            {{/each}}
+        </div>
+    {{/with}}
+    </div>   
+    
+<div class="row">
+    {{#with productData.alert}}
+    {{#if isError}}<span class="fw-bold bg text text-bg-danger badge rounded-pill alert-danger py-4">{{text}}</span>{{/if}}
+    {{/with}}
+</div>
+
+    </div>
+ </div>
+
+{{!--Навігація з різнокольоровими button - і зроблено одразу як Руслан написав, через список)))  --}}
+ <div class="row ">
+    <div class="col-12">
+    <div class="card">
+        <ol class="nav nav-item">
+           <li class="nav-link"> <input class="btn btn-warning" type="Buy" value="Buy"> </li>
+           <li class="nav-link"> <input class="btn btn-outline-danger" type="Add to card" value="Add to card"> </li>
+          <li class="nav-link"> <input class="btn btn-success" type="like" value="Like"> </li>
+           <li class="nav-link">  <input class="btn btn-outline-info" type="Share" value="Share"> </li>
+        </ol>
+    </div>
+</div>
+{{!-- той </div> знизу можна було б залишити перед цим кодом, але тоді строка з кнопками стає ширшою за той контент що зверху--}}
+</div>
+
+</main>
