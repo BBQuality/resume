@@ -6,19 +6,7 @@
     <div class="col-6">
 <div class="container">
             {{!-- breadcrumb - "хлібні крихти" --}}
-             <div class="row">
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    {{#each breadcrumb}}
-    {{#if @last}}
-       <li class="breadcrumb-item active" aria-current="page">{{name}}</li>
-        {{else}}
-    <li class="breadcrumb-item disabled"><a class="" href="{{url}}">{{name}}</a></li>
-    {{/if}}
-    {{/each}}
-  </ol>
-</nav>
-        </div>
+         {{> breadcrumb}}
 
 {{#with productData}}
 
@@ -210,9 +198,6 @@
 <hr>
 <br>
 <br>
-{{> shopaction}}
-<br>
-<br>
-<hr>
+
 
 </main>
