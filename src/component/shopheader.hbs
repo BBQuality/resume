@@ -1,0 +1,59 @@
+       {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - START --}}
+   <div class="row">
+    {{#with navigation}}
+    {{!-- 
+    Поділив на 3 стовбці:
+
+    1. - ЛОГО (мінімально місця). 
+    2. - Можливість розтягнення контейнеру щоб зміщати 1 і 3. 
+    3. - Навігація - так як може кількість зростати тому узяв більшу частину розміру 
+    --}}
+
+<div class="col-1">
+    <div class="row">
+
+    </div>
+        </div>
+
+{{!-- 1. Логотип --}}
+        <div class="col-2">
+      
+            <img class="rounded-circle p-4" src="https://global-uploads.webflow.com/5e157547d6f791d34ea4e2bf/6087f2b060c7a92408bac811_logo.svg"  height="90" alt="{{Logo}}">
+     
+        </div>
+
+
+{{!--2. Той стовбчик що має бути порожнім --}}
+<div class="col-5">
+    <div class="row">
+
+    </div>
+        </div>
+
+{{!--3. Навігація --}}
+
+
+    <div class="col-4 pt-4">
+       
+
+        <section  class="nav" > 
+
+            {{#each links}}
+            <li  class="nav-item disabled"> 
+                <a class="nav-link" href="{{href}}">{{text}}</a>
+            </li> 
+        {{/each}}
+
+  <li class="nav-item disabled"> 
+                <a class="nav-link disabled" href="#">{{Logo}}</a>
+            </li> 
+
+        </section>
+
+   </div>
+{{/with}}
+</div>
+   {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - END --}}
+
+   <hr>
+<br>

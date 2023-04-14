@@ -1,0 +1,21 @@
+ <div class="container">
+        <div class="card bg-secondary text-light p-1">       
+  <img src="{{image}}" class="card-img-top" alt="{{title}}">
+  <div class="card-body">
+    <h5 class="card-title">
+        {{title}}
+      {{#if idNew}} 
+       <span class="badge bg-success rounded-pill fs-6 fw-bold"> NEW  </span>
+{{/if}}
+{{#if isNew}} 
+          <span class="badge bg-success rounded-pill fs-6 fw-bold"> NEW  </span>
+      {{/if}} 
+       {{#if isHot}} 
+          <span class="badge bg-primary rounded-pill fs-6 fw-bold"> TOP  </span>
+      {{/if}}
+      </h5>
+    <p class="card-text">{{description}}</p>
+  </div>
+
+            </div>
+        </div>
