@@ -1,0 +1,23 @@
+ <main>
+ 
+  <div class="col-12">
+    {{#with purchase}}
+            <div class="row">
+   <ol class="nav nav-tabs">
+    {{#each tabs}}   
+ {{#if @first}}
+     <li class="nav-item active">
+       
+            <a class="nav-link active" href="#" >{{this}}</a>
+        </li>
+{{else}}
+<li class="nav-item active">
+            <a class="nav-link" href="#" >{{this}}</a>
+        </li>
+        {{/if}}
+        {{/each}}  
+   </ol>
+   </div>
+   {{/with}}
+</div>
+</main>
