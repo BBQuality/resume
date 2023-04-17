@@ -1,18 +1,23 @@
-<div class="row">
+<div class="row ps-2 ms-1">
         <p class="h1">{{header}}</p>
-    {{#with contacts_data}}
-    <h2>{{title}}</h2>
-    {{/with}}
-</div>
+        </div>
+        <br>
+       
+
 
 
 
 {{!-- тут починається розмітка на 2 колонки 
 цей div має закритись тільки в кінці проекту в даному випадку в цьому завданні--}}
-<div class="row">
+<div class="row mx-2">
 
 {{!-- ліва колонка --}}
 <div class="col-8"> 
+     <div class="row ps-1">
+    {{#with contacts_data}}
+    <h2>{{title}}</h2>
+    {{/with}}
+    </div>
             {{!-- кнопочки --}}
             {{#with contacts_data}}
         <div class="row">
@@ -39,17 +44,17 @@
  
 <br>
 {{!-- ПІБ - тут вже у створеній лівій колонці створюємо нову строку щоб перейти на новий рядок і його ділимо на 2 стовбці --}}
- <div class="row ">
+ <div class="row px-1">
      {{#with contacts_data.form.input}}
      {{#with surname}}
-            <div class="col-5 p-2">
+            <div class="col-5">
                 <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="First name">
                 <div id="Help" class="form-text">{{caption}}</div>
             </div>
             {{/with}}
             {{#with name}}
-            <div class="col-5 p-2">
+            <div class="col-5">
               <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Last name">
                 <div id="Help" class="form-text">{{caption}}</div>
@@ -57,9 +62,9 @@
              {{/with}}
         </div>
 
-        <div class="row">
+        <div class="row px-1">
               {{#with phone}}
-            <div class="col-5 p-2">
+            <div class="col-5">
               <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Phone">
                 <div id="Help" class="form-text">{{caption}}</div>
@@ -67,15 +72,17 @@
              {{/with}}
 
          {{#with email}}
-            <div class="col-5 p-2">
+            <div class="col-5">
               <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="E-mail">
                 <div id="Help" class="form-text">{{caption}}</div>
             </div>
              {{/with}}
-            <hr>
+           
       {{/with}}
-
+       </div>
+ <hr>
+  <div class="row px-2 ms-1">
       {{#with contacts_data.form}}
       {{#each switch}}
      {{#if isActive}}
@@ -90,16 +97,18 @@
             </div>
             {{/if}}
         {{/each}}
-    {{/with}} 
+    {{/with}}
+   
      </div>
-        <hr>
+        <hr>  
 
+<div class="row mx-1 ">
         <h3>{{delivery.title}}</h3>
         <section>
-            <div class="card mt-3">
-                <div class="card-body row">
+            
+                <div class="col-7 row border ps-1 pt-1 pb-0 mb-0">
                     {{#each delivery.select}}
-                    <div class="col-6">
+                    <div class="col-6 mb-1 pb-1">
                         <label class="form-label">{{label}}</label>
                         <select class="form-select">
                             <option select>{{placeholder}}</option>
@@ -110,10 +119,12 @@
                     </div>
                     {{/each}}
                 </div>
-            </div>
         </section>
+
+
+
         <section>
-            <div class="border-white my-3">
+            <div class="row  pt-1 mt-0 mb-2 ps-0">
                 {{#each delivery.delivery_type}}
                 <div class="form-check">
                     <label class="form-check-label">{{type}}</label>
@@ -125,31 +136,34 @@
         <hr>
         <h3>{{delivery.payment.title}}</h3>
         <section>
-            <div class="border-white my-3">
+           
                 {{#each delivery.payment.list}}
-                <div class="form-check">
+                <div class="form-check ps-0">
                     <label class="form-check-label">{{type}}  
                         {{#if description}} ({{description}}) {{/if}}</label>
 
                     <input class="form-check-input" name="type" type="radio">
                 </div>
                 {{/each}}
-            </div>
+            
         </section>
+ </div>
+
         <hr>
+<div class="row ps-0">
 {{#with delivery.contact}}
-        <h3>{{title}}</h3>
+        <h3 class="ms-3">{{title}}</h3>
         <br>
-         <div class="row">
+         <div class="row ps-0 ms-0">
             {{#with surname}}
-            <div class="col-5 p-2">
+            <div class="col-5 py-2">
                 <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="First name">
                 <div id="Help" class="form-text">{{caption}}</div>
             </div>
             {{/with}}
             {{#with name}}
-            <div class="col-5 p-2">
+            <div class="col-5 py-2">
               <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Last name">
                 <div id="Help" class="form-text">{{caption}}</div>
@@ -157,9 +171,9 @@
              {{/with}}
      </div>
 
-        <div class="row">
+        <div class="row ps-0 ms-0">
               {{#with phone}}
-            <div class="col-5 p-2">
+            <div class="col-5 py-2">
               <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Phone">
                 <div id="Help" class="form-text">{{caption}}</div>
@@ -167,7 +181,7 @@
              {{/with}}
 
          {{#with email}}
-            <div class="col-5 p-2">
+            <div class="col-5 py-2">
               <label for="inputLabel" class="form-label">{{label}}</label>
                 <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="E-mail">
                 <div id="Help" class="form-text">{{caption}}</div>
@@ -175,14 +189,17 @@
              {{/with}}
  {{/with}}
  </div>
+ </div>
         <hr>
        
-        <div class="row pb-3">
-            <div class="col-8"> 
+        <div class="row pb-2 ps-2">
+            <div class="row"> 
                 {{#with delivery.coment}}
+           
                 <label for="inputLabel" class="form-label">{{label}}</label>
-                <input class="form-control" type="text" value="{{placeholder}}">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="{{placeholder}}"></textarea>
                 <div id="Help" class="form-text">Введіть коментар</div>
+             
                  {{/with}}
             </div>     
            
@@ -191,7 +208,7 @@
         <div class="row">
  {{#with coupon}}
  <div class="row pb-1" >
-        <h3>{{title}}</h3>
+        <h3 class="ms-3">{{title}}</h3>
         {{#with select.availabel_coupon}}
         <h6>{{label}}</h6>
         <select class="form-select form-select-sm" aria-label=".form-select-sm example">
@@ -212,7 +229,11 @@
             <option value="{{value}}">{{text}}</option>
             {{/each}}
         </select>
-         {{/with}}
+        
+
+
+{{/with}}
+
 </div>
 
  <div class="row py-1" >
@@ -233,12 +254,11 @@
 
 {{/with}}
 </div>
-<br>
 <hr>
 
-<div class="row py-2">
+<div class="row ps-2 py-2">
     {{#with quiz}}
-        <h3>{{title}}</h3>
+        <p class="fs-5">{{title}}</p>
         {{#with preference}}
         <h6>{{title}}</h6>
         {{#each options}}
@@ -248,14 +268,14 @@
         </div>
         {{/each}}
 {{/with}}
-        <div class="row ">
-            <div class="col-8">
-               
+</div>
+
+
+        <div class="row ms-0 py-2">   
                 <h6>{{your_expirience.label}}</h6> 
                 <input class="form-control" type="text">
-            </div>
         </div>
-        <div class="row">
+        <div class="row ps-0 py-2">
             <div class="col-8">
                 {{#with purchase_frequency}}
                 <h6>{{label}}</h6>
@@ -266,17 +286,13 @@
             {{/each}}
                 </select>
                 {{/with}}
+                </div>
 {{/with}}
-
-
-            </div>
-
+            
         </div>
-        </div>
+        
 
-  
-
-<div class="row py-2">
+<div class="row mb-3 py-3">
     {{#with quiz.factors}}
     <h6>{{title}}</h6>
     {{#each options}}
@@ -295,17 +311,17 @@
 
             <div class="row">
 
-                <div class="card">
+                <div class="card my-2 py-2">
                     {{#each action_block}}
                     <ol class="nav nav-item">
                         {{#if isSuccess}}
-                        <li class="nav-link"> <input class="btn btn-success" type="Швидке замовлення"
-                                value="{{text}}"></li> {{/if}}
+                        <li class="nav-link"> 
+                            <button class="btn btn-success">{{text}}</button></li> {{/if}}
                                 {{#if isDanger}}
-                        <li class="nav-link"> <input class="btn btn-danger" type="Видалити" value="{{text}}">
+                        <li class="nav-link"> <button class="btn btn-danger">{{text}}</button>
                         </li>{{/if}}
                         {{#if isInfo}}
-                        <li class="nav-link"> <input class="btn btn-info" type="Детальніше" value="{{text}}">
+                        <li class="nav-link"> <button class="btn btn-info">{{text}}</button>
                         </li>{{/if}}
                     </ol>
                     {{/each}}
