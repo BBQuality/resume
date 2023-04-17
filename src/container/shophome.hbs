@@ -111,46 +111,8 @@
 
 {{#with subscribe}}     
 
-<div class="row my-2 mx-3">
+{{> subscribe}}
 
-
-          <div class="col-12">    
-            
-            <div class="row">  
-            
-                <div class="card bg-dark">
-                     <div class="card-body mx-2 my-3">
-
-                       <div class="row ">
-<div class="col-6">
-            <div class="row text-light">
-<h2>{{header}}</h2>
-<p>{{description}}</p>
-                 </div>
-                </div>
-
-
-              {{#each buttons}}     
-       <div class="col-3">
-            <div class="row p-2 mt-3">    
-             
-                <a type="button" class="btn btn-primary" href="{{link}}">
-                {{text}} 
-                </a>  
-             
-                 </div>
-                </div>
-        {{/each}}
-
-                       </div>
-                     </div>
-                </div>
-           
-             </div> 
-  
-          </div>
-      
-</div>
    {{/with}}
 
 

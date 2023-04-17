@@ -1,0 +1,50 @@
+ <div class="row my-2 pb-2 pt-4 border mx-0 px-0">
+
+<div class="col-7 row">
+
+{{!-- фото товару --}}
+<div class="col-3 mx-4 p-4">
+        <img class="ms-3 me-0" src="{{image}}" aly="{{name}}">
+</div>
+
+{{!-- опис товару і назва --}}
+<div class="col-8 pt-4">
+    <p class="fs-4 fw-medium">{{name}}</p>
+    <p>{{description}}</p>
+</div>
+
+</div>
+<div class="col-5 row p-3">
+{{!-- Ціна --}}
+<div class="col-5 p-4">
+    {{#with price}}
+    <p>{{title}}</p>
+    <p class="fs-5">{{value}}</p>
+    {{/with}}
+</div>
+
+{{!-- Кількість --}}
+<div class="col-3 p-5">
+    {{amount}}
+</div>
+
+{{!-- Кнопки --}}
+<div class="col-4">
+         {{#each buttons}}
+         <div class="row p-1">
+                    <ol class="nav nav-item">
+                        {{#if isPrimary}}
+                        <li class="nav-link"> <button class="btn btn-primary px-4 mx-0">{{text}}</button></li> 
+                        {{/if}}
+                        {{#if isDanger}}
+                        <li class="nav-link"> <button class="btn btn-outline-danger px-3">{{text}}</button>
+                        </li>
+                        {{/if}}
+
+                    </ol> 
+                    </div>
+                    {{/each}}
+                   
+</div>
+</div>
+        </div>

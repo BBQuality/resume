@@ -1,0 +1,69 @@
+<main>
+
+    <p class="fs-1 fw-bold">{{header.title}}</p>
+      {{#if header.button}}  
+      {{#with header.button}}
+               <a type="btn" class="btn btn-outline-secondary py-2 my-2" href="{{link}}">{{text}}</a>
+{{/with}}
+ {{/if}}
+<hr>
+
+<section class="row my-2 py-2">
+    {{#each goodsBlock}}
+       {{> cartGoodsItem}}
+        {{/each}}
+</section>
+
+<hr>
+
+<section class="row my-2 py-2">
+    {{#with total}}
+
+<p class="fs-4 fw-medium py-0 my-0">{{title}}</p>
+<p class="fs-2 fw-medium py-0 my-0">{{amount}}</p>
+<p class="py-0">{{delivery}}</p>
+<div class="col-2">
+         {{#each buttons}}
+         <div class="row">
+                    <ol class="nav nav-item">
+                        {{#if isSuccess}}
+                        <li class="nav-link px-2"> <a class="btn btn-success px-4 mx-0" href="{{link}}">{{text}}</a></li> 
+                        {{/if}}
+                        {{#if isOutline}}
+                        <li class="nav-link px-2"> <a class="btn btn-outline-success px-3" href="{{link}}">{{text}}</a>
+                        </li>
+                        {{/if}}
+
+                    </ol> 
+                    </div>
+                    {{/each}}
+                   
+</div>
+{{/with}}
+</section>
+<hr>
+
+
+{{#with goodsOtherBlock}}
+<section class="row my-2 py-2 my-3">
+    <div class="row text-center mb-2">
+    <p class="fs-1 fw-medium">{{title}}</p>
+    </div>
+{{#each cards}}
+<div class="col-4">
+
+        {{> shopcard}}
+
+</div>
+{{/each}}
+</section>
+{{/with}}
+
+<hr>
+
+{{#with subscribe}}
+{{> subscribe}}
+{{/with}}
+
+
+</main>
