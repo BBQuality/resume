@@ -1,0 +1,383 @@
+<div class="row ps-2 ms-1">
+        <p class="h1">{{header}}</p>
+        </div>
+        <br>
+       
+
+
+
+
+{{!-- тут починається розмітка на 2 колонки 
+цей div має закритись тільки в кінці проекту в даному випадку в цьому завданні--}}
+<div class="row mx-2">
+
+{{!-- ліва колонка --}}
+<div class="col-8"> 
+     <div class="row ps-1">
+    {{#with contacts_data}}
+    <h2>{{title}}</h2>
+    {{/with}}
+    </div>
+            {{!-- кнопочки --}}
+            {{#with contacts_data}}
+        <div class="row">
+            <ul class="nav nav-item">    
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <li class="nav-link "> 
+                    <input class="btn btn-warning btn-sm" value="{{text}}">
+                </li>
+                {{/if}}
+                {{#if isOutline}}
+                <li class="nav-link "> 
+                    <input class="btn btn-outline-warning btn-sm" value="{{text}}">
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+            
+        </div>
+ {{/with}}
+{{!-- тут почнеться розділення на дві всередині лівої колонки
+окремо для прізвища та ім'я
+ --}}
+ 
+<br>
+{{!-- ПІБ - тут вже у створеній лівій колонці створюємо нову строку щоб перейти на новий рядок і його ділимо на 2 стовбці --}}
+ <div class="row px-1">
+     {{#with contacts_data.form.input}}
+     {{#with surname}}
+            <div class="col-5">
+                <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="First name">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+            {{/with}}
+            {{#with name}}
+            <div class="col-5">
+              <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Last name">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+             {{/with}}
+        </div>
+
+        <div class="row px-1">
+              {{#with phone}}
+            <div class="col-5">
+              <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Phone">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+             {{/with}}
+
+         {{#with email}}
+            <div class="col-5">
+              <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="E-mail">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+             {{/with}}
+           
+      {{/with}}
+       </div>
+ <hr>
+  <div class="row px-2 ms-1">
+      {{#with contacts_data.form}}
+      {{#each switch}}
+     {{#if isActive}}
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault " checked> 
+                <label class="form-check-label" for="flexSwitchCheckDefault">{{text}}</label>
+            </div>
+            {{else}}
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" >
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{text}}</label>
+            </div>
+            {{/if}}
+        {{/each}}
+    {{/with}}
+   
+     </div>
+        <hr>  
+
+<div class="row mx-1 ">
+        <h3>{{delivery.title}}</h3>
+        <section>
+            
+                <div class="col-7 row border ps-1 pt-1 pb-0 mb-0">
+                    {{#each delivery.select}}
+                    <div class="col-6 mb-1 pb-1">
+                        <label class="form-label">{{label}}</label>
+                        <select class="form-select">
+                            <option select>{{placeholder}}</option>
+                            {{#each options}}
+                            <option {{value}}>{{text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    {{/each}}
+                </div>
+        </section>
+
+
+
+        <section>
+            <div class="row  pt-1 mt-0 mb-2 ps-0">
+                {{#each delivery.delivery_type}}
+                <div class="form-check">
+                    <label class="form-check-label">{{type}}</label>
+                    <input class="form-check-input" name="type" type="radio">
+                </div>
+                {{/each}}
+            </div>
+        </section>
+        <hr>
+        <h3>{{delivery.payment.title}}</h3>
+        <section>
+           
+                {{#each delivery.payment.list}}
+                <div class="form-check ps-0">
+                    <label class="form-check-label">{{type}}  
+                        {{#if description}} ({{description}}) {{/if}}</label>
+
+                    <input class="form-check-input" name="type" type="radio">
+                </div>
+                {{/each}}
+            
+        </section>
+ </div>
+
+        <hr>
+<div class="row ps-0">
+{{#with delivery.contact}}
+        <h3 class="ms-3">{{title}}</h3>
+        <br>
+         <div class="row ps-0 ms-0">
+            {{#with surname}}
+            <div class="col-5 py-2">
+                <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="First name">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+            {{/with}}
+            {{#with name}}
+            <div class="col-5 py-2">
+              <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Last name">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+             {{/with}}
+     </div>
+
+        <div class="row ps-0 ms-0">
+              {{#with phone}}
+            <div class="col-5 py-2">
+              <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="Phone">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+             {{/with}}
+
+         {{#with email}}
+            <div class="col-5 py-2">
+              <label for="inputLabel" class="form-label">{{label}}</label>
+                <input type="text" class="form-control" placeholder="{{placeholder}}" aria-label="E-mail">
+                <div id="Help" class="form-text">{{caption}}</div>
+            </div>
+             {{/with}}
+ {{/with}}
+ </div>
+ </div>
+        <hr>
+       
+        <div class="row pb-2 ps-2">
+            <div class="row"> 
+                {{#with delivery.coment}}
+           
+                <label for="inputLabel" class="form-label">{{label}}</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="{{placeholder}}"></textarea>
+                <div id="Help" class="form-text">Введіть коментар</div>
+             
+                 {{/with}}
+            </div>     
+           
+        </div>
+        <hr>
+        <div class="row">
+ {{#with coupon}}
+ <div class="row pb-1" >
+        <h3 class="ms-3">{{title}}</h3>
+        {{#with select.availabel_coupon}}
+        <h6>{{label}}</h6>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected> {{placeholder}}</option>
+            {{#each options}}
+            <option value="{{value}}">{{text}}</option>
+            {{/each}}
+        </select>
+         {{/with}}
+         </div>
+<br>
+ <div class="row py-1" >
+         {{#with select.friend_coupon}}
+        <h6>{{label}}</h6>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+            <option selected> {{placeholder}}</option>
+            {{#each options}}
+            <option value="{{value}}">{{text}}</option>
+            {{/each}}
+        </select>
+        
+
+
+{{/with}}
+
+</div>
+
+ <div class="row py-1" >
+         {{#with add.friend}}
+            <label for="inputLabel" class="form-label fw-medium">{{label}}</label>
+                <input class="form-control" type="text" value="{{placeholder}}">
+                <div id="Help" class="form-text">{{caption}}</div>
+         {{/with}}
+</div>
+
+ <div class="row py-1" >
+         {{#with add.colleague}}
+            <label for="inputLabel" class="form-label fw-medium">{{label}}</label>
+                <input class="form-control" type="text" value="{{placeholder}}">
+                <div id="Help" class="form-text">{{caption}}</div>
+         {{/with}}
+</div>
+
+{{/with}}
+</div>
+<hr>
+
+<div class="row ps-2 py-2">
+    {{#with quiz}}
+        <p class="fs-5">{{title}}</p>
+        {{#with preference}}
+        <h6>{{title}}</h6>
+        {{#each options}}
+        <div class="form-check">
+            <input class="form-check-input" name="type" type="radio">
+            <label class="form-check-label">{{this}}</label>
+        </div>
+        {{/each}}
+{{/with}}
+</div>
+
+
+        <div class="row ms-0 py-2">   
+                <h6>{{your_expirience.label}}</h6> 
+                <input class="form-control" type="text">
+        </div>
+        <div class="row ps-0 py-2">
+            <div class="col-8">
+                {{#with purchase_frequency}}
+                <h6>{{label}}</h6>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>{{placeholder}}</option>
+                {{#each options}}
+            <option value="{{value}}">{{text}}</option>
+            {{/each}}
+                </select>
+                {{/with}}
+                </div>
+{{/with}}
+            
+        </div>
+        
+
+<div class="row mb-3 py-3">
+    {{#with quiz.factors}}
+    <h6>{{title}}</h6>
+    {{#each options}}
+    <div class="form-check">
+        <input class="form-check-input" name="type" type="checkbox">
+        <label class="form-check-label">{{this}}</label>
+    </div>
+    {{/each}}
+    {{/with}}
+    </div>
+</div>
+  
+{{!-- права друга колонка --}}
+
+<div class="col-4">
+
+            <div class="row">
+
+                <div class="card my-2 py-2">
+                    {{#each action_block}}
+                    <ol class="nav nav-item">
+                        {{#if isSuccess}}
+                        <li class="nav-link"> 
+                            <button class="btn btn-success">{{text}}</button></li> {{/if}}
+                                {{#if isDanger}}
+                        <li class="nav-link"> <button class="btn btn-danger">{{text}}</button>
+                        </li>{{/if}}
+                        {{#if isInfo}}
+                        <li class="nav-link"> <button class="btn btn-info">{{text}}</button>
+                        </li>{{/if}}
+                    </ol>
+                    {{/each}}
+                </div>
+
+            </div>
+            <div class="row">
+{{#with total}}
+                <div class="card">
+                    <p class="display-6 fw-medium">{{title}}:</p>
+                    
+                    {{#each item_list}}
+                    <div class="row">
+                    <p class="fs-5">{{name}} : <b>{{price}}</b></p>
+                   
+                    </div>
+                    {{/each}}
+                     <hr>
+
+                    {{#each additional_info}}
+                       <div class="row">
+                    <p class="fs-5">{{text}} : <b>{{value}}</b></p>
+                    </div>
+                    {{/each}}
+                    <hr>
+                    {{#with total_price}}
+                    <div class="row">
+                    <p class="fs-5">{{text}} : <b>{{value}}</b></p>
+                     </div>
+                    {{/with}}
+                  
+ <hr>
+                    {{#each button}}
+                    <ol class="nav nav-item">
+                        {{#if isPrimary}}
+                        <li class="nav-link"> <input class="btn btn-primary" type="Швидке замовлення" value="{{text}}"></li> 
+                        {{/if}}
+                        {{#if isOutline}}
+                        <li class="nav-link"> <input class="btn btn-outline-primary" type="Видалити" value="{{text}}">
+                        </li>
+                        {{/if}}
+
+                    </ol>
+                    {{/each}}
+                </div>
+{{/with}}
+            </div>
+
+            {{!-- тут нову картку додай також у div card, але огорни так сам як зверху ще у div class="row" --}}
+            
+</div>
+      
+
+{{!-- кінець правого стовбчика --}}
+
+
+</div>
+
+

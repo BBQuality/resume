@@ -108,17 +108,24 @@
 <hr>
 <br>
 
+
+
 {{!-- початок частина galllery - це list-item --}}
  {{#with gallery}}
 
- <div class="row">
+ 
     <h2 class="text-center text-uppercase">{{title}}</h2>
-    </div>
-<div class="card">
-  {{#each cards}}
-    <div class="card-header">
+  
+<div class="row ">
+
+    {{#each cards}}
+
+    <div class="col-3 card">
+
+ 
+             <div class="card-header">
     <div>{{name}}</div>
-    </div>
+             </div>
 <ul class="list-group">
     <li class="list-group-item">
         <ul class="list-group"> 
@@ -129,11 +136,13 @@
         {{/each}}
         </ul>
     </li>
-    {{/each}}
+   
 </ul>
 
-</div>
 
+</div>
+ {{/each}}
+ </div>
 {{/with}}
 
 {{!-- кінцева частина galllery - це list-item --}}

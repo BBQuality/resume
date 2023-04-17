@@ -40,8 +40,10 @@
 
             {{#each links}}
             <li  class="nav-item disabled"> 
+                {{#if href}}
                 <a class="nav-link" href="{{href}}">{{text}}</a>
             </li> 
+            {{/if}}
         {{/each}}
 
   <li class="nav-item disabled"> 
