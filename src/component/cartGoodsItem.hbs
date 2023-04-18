@@ -31,18 +31,7 @@
 {{!-- Кнопки --}}
 <div class="col-4">
          {{#each buttons}}
-         <div class="row p-1">
-                    <ol class="nav nav-item">
-                        {{#if isPrimary}}
-                        <li class="nav-link"> <button class="btn btn-primary px-4 mx-0">{{text}}</button></li> 
-                        {{/if}}
-                        {{#if isDanger}}
-                        <li class="nav-link"> <button class="btn btn-outline-danger px-3">{{text}}</button>
-                        </li>
-                        {{/if}}
-
-                    </ol> 
-                    </div>
+{{> buttons}}
                     {{/each}}
                    
 </div>

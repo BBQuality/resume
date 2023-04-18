@@ -1,8 +1,7 @@
  <main>
- 
-  <div class="col-12">
-    {{#with purchase}}
-            <div class="row">
+{{#with purchase}}
+  <div class="row p-3 g-2">
+     
    <ol class="nav nav-tabs">
     {{#each tabs}}   
  {{#if @first}}
@@ -17,7 +16,228 @@
         {{/if}}
         {{/each}}  
    </ol>
-   </div>
-   {{/with}}
+   
+  </div>
+  
+<div class="col-12 row p-3 g-2">
+
+<div class="col-2 p-3">
+    
+    {{#with actionBlock.input}}
+
+     <section class="col-12 p-3">
+            <input class="form-control" name="type" placeholder="{{placeholder}}">
+            <label class="fform-control"></label>
+        </section>
+        
+        {{/with}}
+
 </div>
+
+
+   <div class="col-10 p-3"> 
+
+                    <ol class="nav nav-list mt-3">  
+                   {{#each actionBlock.buttons}}
+                        {{#if isSuccess}}
+                        <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-success">{{text}}</a></li> 
+                       {{/if}}
+                        {{#if isOutline}}
+                        <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-outline-success" >{{text}}</a>
+                        </li>
+                        {{/if}}
+                         {{#if isDanger}}
+                        <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-outline-danger" >{{text}}</a>
+                        </li>
+                        {{/if}}
+                    {{/each}}
+                    </ol>  
+    </div>
+               
+</div>
+
+<hr>
+
+
+{{#each itemList}}
+{{> purchaseItem}}
+{{/each}}
+ {{/with}}
+
+
+{{#with userInfo}}
+<div class="col-12 row p-3 g-2">
+
+<p class="fs-2 fw-medium ms-2">{{title}}</p>
+
+
+<div class="col-12 row text-center border">
+    {{#with profileData}}
+    
+    <p class="fs-3 fw-medium">{{title}}</p>
+         <div class="col-12 row text-center border p-3 g-2">
+
+{{!-- перша коллонка --}}
+
+{{#with fullName}}
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with surname}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+            
+
+
+{{!-- друга коллонка --}}
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with name}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+               {{/with}}
+                </div>
+
+
+{{!-- третя коллонка --}}
+
+                    <div class="col-4 text-center p-3 g-2">
+                {{#with middleName}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+               {{/with}}
+
+                </div>
+{{/with}}
+         </div>
+    {{/with}}
+
+
+{{!-- додаткові відомості --}}
+
+    {{#with profileData.otherInfo}}
+    
+         <div class="col-12 row text-center border p-3 g-2 ">
+
+{{!-- перша коллонка --}}
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with birthday}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+                    {{/with}}
+                </div>
+            
+
+
+{{!-- друга коллонка --}}
+
+                <div class="col-4 text-center p-3 g-2">
+                    {{#with sex}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+               {{/with}}
+                </div>
+
+
+{{!-- третя коллонка --}}
+
+                    <div class="col-4 text-center p-3 g-2">
+                {{#with language}}
+                    <p>{{title}}</p>
+                    <p class="fw-bold">{{value}}</p>
+               {{/with}}
+
+                </div>
+
+         </div>
+    {{/with}}
+
+
+  {{/with}}  
+
+
+{{#with userInfo.contacts}}
+ <div class="col-12 row border text-center p-3 g-2"> 
+            {{#each buttons}}
+<div class="col-4 text-center p-3">
+{{> buttons}}
+</div>
+            {{/each}}
+         </div>
+{{/with}}
+
+ </div>
+
+
+
+{{#with userInfo.recipients}}
+<div class="col-12 row border text-center p-3 g-2">
+    <p class="fs-4 fw-medium">{{title}}</p>
+
+{{#each users}}    
+  <div class="col-4 border text-center p-3 g-2">
+ 
+{{> cardContact}}
+
+</div>
+{{/each}}
+</div>
+{{/with}}
+
+
+
+
+{{#with userInfo.contacts}}
+<div class="col-12 row border p-3 text-center g-2" > 
+
+    <p class="fs-4 fw-medium py-2">{{title}}</p> 
+   
+        {{#with contactData.phone}}
+<div class="col-4 border text-center py-3 g-2">
+    <p>{{title}}</p>
+   <p class="fw-medium">{{value}}</p>
+         {{/with}}
+                {{#each buttons}}
+                        {{#if isPrimary}}
+                      <button class="btn btn-primary" href="{{link}}">{{text}}</button> 
+                        {{/if}}
+                {{/each}}
+
+</div>
+
+ {{#with contactData.additionalPhone}}
+<div class="col-4 border text-center py-3 g-2">
+   
+    <p>{{title}}</p>
+   <p class="fw-medium">{{value}}</p>
+         {{/with}}
+
+                {{#each buttons}}
+                        {{#if isPrimary}}
+                      <button class="btn btn-primary" href="{{link}}">{{text}}</button> 
+                        {{/if}}
+                {{/each}}
+
+</div>
+
+ {{#with contactData.email}}
+<div class="col-4 border text-center  py-3 g-2">
+   
+    <p>{{title}}</p>
+   <p class="fw-medium">{{value}}</p>
+         {{/with}}
+
+                {{#each buttons}}
+                        {{#if isPrimary}}
+                      <button class="btn btn-primary" href="{{link}}">{{text}}</button> 
+                        {{/if}}
+                {{/each}}
+
+</div>
+
+</div>
+{{/with}}
+    </div>
+
 </main>

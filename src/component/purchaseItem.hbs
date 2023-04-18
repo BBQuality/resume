@@ -1,0 +1,60 @@
+ <div class="row border-bottom p-3">
+
+<div class="col-6 row p-3">
+
+{{!-- Про товар --}}
+<div class="col-8 p-3">
+    <p class="fs-5">{{number}}</p>
+    <p class="fs-3">{{status}}</p>
+</div>
+{{!-- Про товар --}}
+
+
+
+
+
+
+{{!-- ціна --}}
+<div class="col-4 p-3">
+    {{#with amount}}
+    <p class="fs-4 fw-medium">{{title}}</p>
+    <p>{{value}}</p>
+    {{/with}}
+</div>
+{{!-- ціна --}}
+
+</div>
+
+
+
+
+<div class="col-4 row p-3">
+
+{{!-- Фото --}}
+    <div class="col-8 row p-3">
+{{#each images}}
+        <div class="col-4 p-3">
+    <img src="{{this}}">
+    </div>
+{{/each}}
+    </div>
+{{!-- Фото --}}
+
+ </div>
+
+{{!-- Кнопки --}}
+        <div class="col-2 p-3">
+                         {{#with button}}
+                <div class="row p-3">
+             
+                        {{#if isPrimary}}
+                        <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                       {{else}}
+                       <a class="btn btn-secondary" disabled>{{text}}</a>
+               
+                        {{/if}}
+                  
+                </div>
+                        {{/with}}
+        </div>
+</div>
