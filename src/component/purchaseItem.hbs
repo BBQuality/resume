@@ -1,0 +1,60 @@
+ <div class="container-fluid col-12 row border-bottom rounded m-auto">
+
+<div class="container-fluid col-6 row m-auto">
+
+{{!-- Про товар --}}
+<div class="container-fluid row col-8 m-auto">
+    <p class="fs-5">{{number}}</p>
+    <p class="fs-3">{{status}}</p>
+</div>
+{{!-- Про товар --}}
+
+
+
+
+
+
+{{!-- ціна --}}
+<div class="container-fluid row col-4 m-auto">
+    {{#with amount}}
+    <p class="fs-4 fw-medium">{{title}}</p>
+    <p>{{value}}</p>
+    {{/with}}
+</div>
+{{!-- ціна --}}
+
+</div>
+
+
+
+
+<div class="container-fluid col-4 row m-auto">
+
+{{!-- Фото --}}
+    <div class="container-fluid col-12 row p-3  g-2">
+{{#each images}}
+        <div class="container-fluid col-4 row rounded mx-auto d-block">
+    <img src="{{this}}" class="img-fluid img-thumbnail rounded m-auto d-block">
+    </div>
+{{/each}}
+    </div>
+{{!-- Фото --}}
+
+ </div>
+
+{{!-- Кнопки --}}
+        <div class="container-fluid col-2 row m-auto">
+                         {{#with button}}
+                <div class="container-fluid row col-8 m-auto p-3">
+             
+                        {{#if isPrimary}}
+                        <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                       {{else}}
+                       <a class="btn btn-secondary" disabled>{{text}}</a>
+               
+                        {{/if}}
+                  
+                </div>
+                        {{/with}}
+        </div>
+</div>
