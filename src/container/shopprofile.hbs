@@ -1,81 +1,72 @@
  <main>
 {{#with purchase}}
-  <div class="row p-3 g-2">
+  <div class="col-12 container-flex row rounded g-2">
      
    <ol class="nav nav-tabs">
     {{#each tabs}}   
  {{#if @first}}
      <li class="nav-item active">
        
-            <a class="nav-link active" href="#" >{{this}}</a>
+            <a class="nav-link fs-5 fw-normal active" href="#" >{{this}}</a>
         </li>
 {{else}}
 <li class="nav-item active">
-            <a class="nav-link" href="#" >{{this}}</a>
+            <a class="nav-link fs-5 fw-normal" href="#" >{{this}}</a>
         </li>
         {{/if}}
         {{/each}}  
    </ol>
    
   </div>
-  
-<div class="col-12 row p-3 g-2">
 
-<div class="col-2 p-3">
-    
-    {{#with actionBlock.input}}
+   <div class="col-5 container-flex row my-auto g-2">   
 
-     <section class="col-12 p-3">
-            <input class="form-control" name="type" placeholder="{{placeholder}}">
-            <label class="fform-control"></label>
-        </section>
-        
-        {{/with}}
-
-</div>
-
-
-   <div class="col-10 p-3"> 
-
-                    <ol class="nav nav-list mt-3">  
-                   {{#each actionBlock.buttons}}
+    {{#with actionBlock}}
+   
+ 
+     <div class="col-4 container input-group g-2 p-3 my-auto">
+           <input class="form-control-lg" type="text" placeholder="{{input.placeholder}}" aria-describedby="search-form">
+                  
+                   {{#each buttons}}
                         {{#if isSuccess}}
-                        <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-success">{{text}}</a></li> 
+                       <button href="{{link}}" class="input-group-text btn btn-success" type="button" id="search-form">{{text}}</button>
                        {{/if}}
+
                         {{#if isOutline}}
-                        <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-outline-success" >{{text}}</a>
-                        </li>
+                        <button href="{{link}}" class="input-group-text btn btn-outline-success" type="button" id="search-form">{{text}}</button>
                         {{/if}}
+
                          {{#if isDanger}}
-                        <li class="nav-item me-3"> <a href="{{link}}" class="btn btn-outline-danger" >{{text}}</a>
-                        </li>
+                         <button href="{{link}}" class="input-group-text btn btn-outline-danger" type="button" id="search-form">{{text}}</button>
                         {{/if}}
                     {{/each}}
-                    </ol>  
     </div>
-               
-</div>
+                     {{/with}}
 
+
+</div>         
 <hr>
 
+
+<div class="row col-12 container-fluid p-3 g-1">
 
 {{#each itemList}}
 {{> purchaseItem}}
 {{/each}}
  {{/with}}
-
+</div>
 
 {{#with userInfo}}
-<div class="col-12 row p-3 g-2">
+<div class="col-12 row container-fluid p-3 mt-2-3 g-2">
 
 <p class="fs-2 fw-medium ms-2">{{title}}</p>
 
 
-<div class="col-12 row text-center border">
+<div class="row col-12 container border p-3 my-3 g-1">
     {{#with profileData}}
     
     <p class="fs-3 fw-medium">{{title}}</p>
-         <div class="col-12 row text-center border p-3 g-2">
+         <div class="col-12 row text-center border p-1 g-2">
 
 {{!-- перша коллонка --}}
 
@@ -117,7 +108,7 @@
 
     {{#with profileData.otherInfo}}
     
-         <div class="col-12 row text-center border p-3 g-2 ">
+         <div class="col-12 row container border my-3 g-1">
 
 {{!-- перша коллонка --}}
 
@@ -158,9 +149,9 @@
 
 
 {{#with userInfo.contacts}}
- <div class="col-12 row border text-center p-3 g-2"> 
+ <div class="col-12 row container border my-0 g-1"> 
             {{#each buttons}}
-<div class="col-4 text-center p-3">
+<div class="col-4 text-center p-3 pb-4 g-2">
 {{> buttons}}
 </div>
             {{/each}}
@@ -172,15 +163,15 @@
 
 
 {{#with userInfo.recipients}}
-<div class="col-12 row border text-center p-3 g-2">
-    <p class="fs-4 fw-medium">{{title}}</p>
+<div class="col-12 row container border p-3 my-3 g-1">
+    <p class="fs-3 fw-medium py-2">{{title}}</p>
 
 {{#each users}}    
-  <div class="col-4 border text-center p-3 g-2">
+
  
 {{> cardContact}}
 
-</div>
+
 {{/each}}
 </div>
 {{/with}}
@@ -189,12 +180,12 @@
 
 
 {{#with userInfo.contacts}}
-<div class="col-12 row border p-3 text-center g-2" > 
+<div class="row col-12 container border p-3 my-3 g-1"> 
 
-    <p class="fs-4 fw-medium py-2">{{title}}</p> 
+    <p class="fs-3 fw-medium py-1">{{title}}</p> 
    
         {{#with contactData.phone}}
-<div class="col-4 border text-center py-3 g-2">
+<div class="col-3 g-2 card card-body text-center mx-1">
     <p>{{title}}</p>
    <p class="fw-medium">{{value}}</p>
          {{/with}}
@@ -207,7 +198,7 @@
 </div>
 
  {{#with contactData.additionalPhone}}
-<div class="col-4 border text-center py-3 g-2">
+<div class="col-3 g-2 card card-body text-center mx-1">
    
     <p>{{title}}</p>
    <p class="fw-medium">{{value}}</p>
@@ -222,7 +213,7 @@
 </div>
 
  {{#with contactData.email}}
-<div class="col-4 border text-center  py-3 g-2">
+<div class="col-3 g-2 card card-body text-center mx-1">
    
     <p>{{title}}</p>
    <p class="fw-medium">{{value}}</p>

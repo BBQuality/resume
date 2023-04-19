@@ -1,5 +1,5 @@
        {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - START --}}
-   <div class="row">
+   <div class=" container-fluid rounded col-12 row m-auto">
     {{#with navigation}}
     {{!-- 
     Поділив на 3 стовбці:
@@ -9,38 +9,33 @@
     3. - Навігація - так як може кількість зростати тому узяв більшу частину розміру 
     --}}
 
-<div class="col-1">
-    <div class="row">
+<div class="col-8 row container-fluid rounded m-auto">
 
-    </div>
-        </div>
+      
 
 {{!-- 1. Логотип --}}
-        <div class="col-2">
-      {{#if Logo}}
+        <div class="col-8 container rounded m-auto">
+      {{!-- {{#if Logo}} --}}
             <img class="rounded-circle p-4" src="https://global-uploads.webflow.com/5e157547d6f791d34ea4e2bf/6087f2b060c7a92408bac811_logo.svg"  height="90" alt="{{Logo}}">
-     {{/if}}
+     {{!-- {{/if}} --}}
         </div>
 
-
-{{!--2. Той стовбчик що має бути порожнім --}}
-<div class="col-5">
-    <div class="row">
-
-    </div>
-        </div>
-
-{{!--3. Навігація --}}
+  </div>
 
 
-    <div class="col-4 pt-4">
+
+{{!--2 Навігація --}}
+
+
+    <div class="col-4 m-auto">
        
 
-        <section  class="nav" > 
+        <section  class="nav col-6 container-fluid rounded m-auto" > 
 
             {{#each links}}
-            <li  class="nav-item disabled"> 
-                {{#if href}}
+             {{#if href}}
+            <li  class="nav-item border rounded m-auto"> 
+               
                 <a class="nav-link" href="{{href}}">{{text}}</a>
             </li> 
             {{/if}}
@@ -52,9 +47,8 @@
 
         </section>
 
-   </div>
+   
 {{/with}}
 </div>
    {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - END --}}
 
-   <hr>
