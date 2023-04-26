@@ -1,0 +1,159 @@
+{{!-- Розмітка сторінки на 12 столбців початок--}}
+<div class="col-12">
+{{!-- Рядок на всю ширину сторінки початок--}}
+<div class="row p-3 g-3 p-3 border-bottom border-4">
+
+
+    {{!-- КОНТЕНТ ПОЧАТОК --}}
+
+{{!-- Ліва колонка на 8 столбців --}}
+    <div class="col-8 p-2">
+
+        {{!-- Рядок із вмістом лівої колонки початок - цілий БЛОК --}}
+        <div class="row p-3">
+
+
+            {{!-- formBlock --}}
+{{#with formBlock}}
+
+{{!-- Розмітка БЛОКу Лівої колонки на 12 столбців початок--}}
+<div class="col-12 p-3">
+
+{{!-- Рядок з назвою та оцінкою початок --}}
+    <div class="row p-2">
+                <p class="fs-3 fw-bold">{{header}}</p>
+                {{#with rating}}
+                <p class="fs-6 fw-normal ms-1">{{title}} : {{value}}</p>
+                {{/with}}
+    </div>
+{{!-- Рядок з назвою та оцінкою кінець --}}
+
+{{!-- actionBlock --}}
+    {{#with actionBlock}}
+
+{{!-- Рядок з ТАБами початок --}}
+     <div class="row mb-2 py-5 border-1">
+        <ol class="nav nav-tabs justify-content-between text-center ">
+    {{#each tabs}}   
+ {{#if isActive}}
+ <div class="col-3 px-3 ">
+    <li class="nav-item active">
+        <a class="nav-link fs-4 fw-normal active" href="#" >{{text}}</a>
+    </li>
+    </div>
+{{else}}
+ <div class="col-3 px-3">
+    <li class="nav-item active">
+         <a class="nav-link fs-4 fw-normal" href="#" >{{text}}</a>
+    </li>
+    </div>
+        {{/if}}
+        {{/each}}  
+        </ol>
+
+    </div>
+{{!-- Рядок з ТАБами кінець--}}
+
+
+{{!-- Рядок для внутрішнього контенту з відгуком про товар початок --}}
+<div class="row border-top border-bottom border-5 py-5 my-5">
+     {{#with report}}
+     <div class="card card-body border-2 my-5 p-5" style="background-color:rgba(0, 140, 255, 0.048)">
+        <p class="fw-medium">{{title}}</p>
+        <div class="col-4">
+        {{#with button}}
+        <a type="button" class="btn btn-secondary" href="{{link}}" target="_blank">{{text}}</a>
+        {{/with}}
+        </div>
+     </div>
+    {{/with}}
+</div>
+{{!-- Рядок для внутрішнього контенту з відгуком про товар кінець --}}
+
+{{/with}}
+{{!-- actionBlock кінець--}}
+
+
+
+{{!-- feedbackBlock --}}
+{{#with feedbackBlock}}
+{{!-- Рядок про зворотній зв'язок/відгук початок --}}
+<div class="row p-2 py-5">
+
+    <p class="py-3 fs-3 fw-bold">{{title}}</p>
+<div class="col-7">
+<div class="row justify-content-between">
+   {{#each buttons}}
+<div class="col-4 text-light"> 
+    <div class="row g-2">
+{{> buttons}}
+</div>
+ </div>
+   {{/each}}
+</div>
+</div>
+</div>
+{{!-- Рядок про зворотній зв'язок/відгук кінець --}}
+
+{{/with}}
+{{!-- feedbackBlock --}}
+
+</div>
+{{!-- Розмітка БЛОКу Лівої колонки на 12 столбців початок--}}
+
+
+
+    </div>
+    {{!-- Рядок із вмістом лівої колонки кінець --}}
+</div>
+{{!-- Ліва колонка на 8 столбців кінець--}}
+
+
+
+{{!-- Права колонка на 4 столбці початок--}}
+ <div class="col-4">
+
+<div class="row justify-content-center p-2">
+    {{#with goodsInfo}}
+    <div class="col-12">
+<div class="row">
+ {{> shopcard}}
+</div>
+
+<div class="row my-3">
+<div class="card px-4 card-body ">
+    {{> check}}
+</div>
+</div>
+
+<div class="row my-3">
+<div class="card px-4 card-body ">
+    {{#with seller}}
+    {{> seller}}
+    {{/with}}
+</div>
+</div>
+    </div>
+    {{/with}}
+</div>
+
+    </div>
+{{!-- Права колонка на 4 столбці кінець--}}
+{{/with}}
+{{!-- formBlock --}}
+
+
+{{!-- КОНТЕНТ КІНЕЦЬ --}}
+
+</div>
+{{!-- Рядок на всю ширину сторінки кінець--}}
+
+
+{{!-- reviewList --}}
+{{#each reviewList}}
+{{> reviewitem}}
+{{/each}}
+{{!-- reviewList --}}
+
+</div>
+{{!-- Розмітка сторінки на 12 столбців кінець--}}

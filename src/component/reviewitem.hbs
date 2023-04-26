@@ -1,0 +1,101 @@
+{{!-- Колонка Коментарів на всю ширину екрану - Столбців-12 - Початок --}}
+<div class="row my-3 px-3 py-3 border-bottom">
+    {{!-- Картка з коментарями та Відгуками --}}
+    <div class="card p-3 my-4">
+{{!-- Картка з відгуками та описом по товару - початок --}}
+            <div class="card">
+                
+                {{#with title}}
+                <div class="card-header">
+    
+                <p class="fs-5 fw-semibold">{{userName}}</p>
+                <p class="fs-6 fw-light">{{caption}}</p>
+                <p class="fs-6 fw-light fw-italic">{{date}}</p>
+               
+                </div> 
+                {{/with}}
+
+{{!-- reviewBody --}}
+                {{#with reviewBody}}
+                <div class="card-body">
+{{!-- seller --}}
+{{#with seller}}
+                 {{> seller}}
+{{/with}}
+{{!-- seller --}}
+
+{{!-- rating --}}
+{{#with rating}}
+                    <p class="text-body py-3 my-2">{{title}} : {{value}}</p>
+{{/with}}
+{{!-- rating --}}
+
+{{!-- text --}}
+{{#each text}}
+                    <p class="text-body pb-3 my-2 fs-6 fw=light">{{this}}</p>
+{{/each}}
+{{!-- text --}}
+
+{{!-- advantages --}}
+{{#with advantages}}
+                    <p class="fs-5 lh-1 fw-semibold ">{{title}}</p> 
+                    <p class="fs-6 lh-1 fw-light fw-italic pb-3">{{text}}</p>
+{{/with}}
+{{!-- advantages --}}
+
+{{#with disadvantages}}
+                    <p class="fs-5 lh-1 fw-semibold ">{{title}}</p> 
+                    <p class="fs-6 lh-1 fw-light fw-italic pb-3">{{text}}</p>
+{{/with}}
+
+{{#if images}}
+<div class="card-footer p-1 m-0">
+<div class="row justify-content-start">
+
+{{!-- Фото --}}
+<div class="row">
+{{#each images}}
+<div class="col-1 rounded d-block">
+    <img src="{{this}}" class="img-fluid img-thumbnail rounded m-auto d-block">
+</div>
+{{/each}}
+</div>
+{{!-- Фото --}}
+
+</div>
+</div>
+{{/if}}
+
+
+                </div>
+
+
+            </div>
+{{!-- Основна картка з Відгуком та описом - кінець--}}
+
+
+
+{{!-- Картки з коментарями до відгуку - початок --}}
+{{#each coments}}
+<div class="row my-3 py-3 justify-content-end">
+
+    <div class="col-11">
+        <div class="card card-body">
+            <p class="card title fs-5 lh-1 fw-semibold p-3">{{userName}}</p>
+            <p class="fs-6 lh-1 fw-light fw-italic ps-3">{{date}}</p>
+            <p class="text-body fs-6 lh-1 fw=light ps-2">{{text}}</p>
+        </div>
+    </div>
+
+</div>
+{{/each}}
+{{!-- Картки з коментарями до відгуку - Кінець --}}
+
+                {{/with}}
+{{!-- reviewBody --}}
+
+    </div>
+{{!-- Картка з Коментарями та відгуками - Кінець --}}
+
+</div>
+{{!-- Колонка Коментарів на всю ширину екрану - Столбців-12 - Кінець --}}
