@@ -1,5 +1,5 @@
-       {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - START --}}
-   <div class=" container-fluid rounded col-12 row m-auto">
+      {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - START --}}
+   <div class=" container-fluid rounded col-12 row m-auto border-bottom">
     {{#with navigation}}
     {{!-- 
     Поділив на 3 стовбці:
@@ -27,28 +27,27 @@
 {{!--2 Навігація --}}
 
 
-    <div class="col-4 m-auto">
-       
+    <div class="col-4 row m-auto p-3 mb-4">
+    
 
-        <section  class="nav col-6 container-fluid rounded m-auto" > 
+        <ul  class="nav jistify-content-end rounded p-1 m-auto" > 
 
             {{#each links}}
-             {{#if href}}
-            <li  class="nav-item border rounded m-auto"> 
+             {{#if href}}    
+             {{#if @last}}
+            <li class="nav-item row col-3 text-center border rounded p-3 m-auto"> 
+                <a class="nav-link disabled" href="{{href}}">{{text}}</a>
+            </li> 
+            {{else}}
+            <li  class="nav-item row col-3 text-center border rounded p-3 m-auto"> 
                
                 <a class="nav-link" href="{{href}}">{{text}}</a>
             </li> 
             {{/if}}
-        {{/each}}
+            {{/if}}
+    
+{{/each}}
+        </ul>
 
-  <li class="nav-item disabled"> 
-                <a class="nav-link disabled" href="#">{{Logo}}</a>
-            </li> 
-
-        </section>
-
-   
 {{/with}}
 </div>
-   {{!-- <HEADER> - </HEADER>. 1 - Строка для 3 - Стовбців - END --}}
-

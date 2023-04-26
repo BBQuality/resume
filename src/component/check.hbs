@@ -1,0 +1,18 @@
+
+<p class="lh-1 fs-4 fw-medium ">{{price}}</p>
+{{#if inMarket}}
+<p class="lh-1 fs-6 fw-italic py-0 my-0">Є в наявності</p>
+{{/if}}
+<p class="fs-4 fw-medium py-0 my-0">{{title}}</p>
+<p class="fs-2 fw-medium py-0 my-0">{{amount}}</p>
+<p class="py-0">{{delivery}}</p>
+<div class="col-4 py-0 my-0">
+         {{#each buttons}}
+         <div class="row py-0 my-0">
+            <ol class="nav nav-item py-0 my-0">
+                <li class="nav-link px-2 py-1">{{> buttons}}</li>
+            </ol> 
+         </div>
+         {{/each}}
+                   
+</div>

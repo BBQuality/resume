@@ -16,31 +16,16 @@
 
 <hr>
 
+
 <section class="row my-2 py-2">
     {{#with total}}
 
-<p class="fs-4 fw-medium py-0 my-0">{{title}}</p>
-<p class="fs-2 fw-medium py-0 my-0">{{amount}}</p>
-<p class="py-0">{{delivery}}</p>
-<div class="col-2">
-         {{#each buttons}}
-         <div class="row">
-                    <ol class="nav nav-item">
-                        {{#if isSuccess}}
-                        <li class="nav-link px-2"> <a class="btn btn-success px-4 mx-0" href="{{link}}">{{text}}</a></li> 
-                        {{/if}}
-                        {{#if isOutline}}
-                        <li class="nav-link px-2"> <a class="btn btn-outline-success px-3" href="{{link}}">{{text}}</a>
-                        </li>
-                        {{/if}}
+{{> check}}
 
-                    </ol> 
-                    </div>
-                    {{/each}}
-                   
-</div>
 {{/with}}
 </section>
+
+
 <hr>
 
 

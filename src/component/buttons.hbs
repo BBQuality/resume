@@ -1,14 +1,45 @@
 
                         {{#if isPrimary}}
-                         <a class="btn btn-primary px-4 mx-0" href="{{link}}">{{text}}</a>
+                            <a class="btn btn-primary px-3 mx-0" href="{{link}}">{{text}}</a>
+                        {{!-- {{else}}
+                            <a class="btn btn-primary px-3 mx-0 disabled" href="{{link}}">{{text}}</a> --}}
                         {{/if}}
+
                         {{#if isSecondary}}
-                         <a class="btn btn-outline-warning px-4 mx-0" href="{{link}}">{{text}}</a>
+                            <a class="btn btn-secondary px-3 mx-0" href="{{link}}">{{text}}</a>
+                        {{!-- {{else}}
+                            <a class="btn btn-outline-warning px-3 mx-0 disabled" href="{{link}}">{{text}}</a> --}}
                         {{/if}}
+
                         {{#if isDanger}}
-                       <a class="btn btn-outline-danger px-3 mx-0" href="{{link}}">{{text}}</a>
+                        {{#if isFull}}
+                            <a class="btn btn-danger px-3 mx-0" href="{{link}}">{{text}}</a>
+                        {{else}}
+                            <a class="btn btn-outline-danger px-3 mx-0" href="{{link}}">{{text}}</a>
                         {{/if}}
+                        {{!-- {{else}}
+                            <a class="btn btn-outline-danger px-3 mx-0 disabled" href="{{link}}">{{text}}</a> --}}
+                        {{/if}}
+
                         {{#if noCondition}}
-                        <a class="btn btn-primary px-4 mx-0" href="{{link}}">{{text}}</a>
+                            <a class="btn btn-primary px-3 mx-0" href="{{link}}">{{text}}</a>
+                        {{!-- {{else}}
+                            <a class="btn btn-primary px-3 mx-0 disabled" href="{{link}}">{{text}}</a> --}}
+                        {{/if}}
+
+                        {{#if isWarning}}
+                            <a class="btn btn-warning px-4 mx-0 text-light" href="{{link}}">{{text}}</a>
+                        {{!-- {{else}}
+                            <a class="btn btn-outline-warning px-3 mx-0 disabled" href="{{link}}">{{text}}</a> --}}
+                        {{/if}}
+
+                        {{#if isSuccess}}
+                            <a class="btn btn-success px-3 mx-0" href="{{link}}">{{text}}</a>
+                        {{!-- {{else}}
+                            <a class="btn btn-outline-success px-3 mx-0 disabled" href="{{link}}">{{text}}</a> --}}
+                        {{/if}}
+
+                         {{#if isOutline}}
+                         <a class="btn btn-outline-success px-3" href="{{link}}">{{text}}</a>
                         {{/if}}
                    
