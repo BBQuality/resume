@@ -1,0 +1,78 @@
+    <div class="card">
+
+{{!-- Фото --}}
+    <div class=" col-12">
+        <div class="row rounded d-block g-1">
+             <img src="{{img}}" class="img-fluid img-thumbnail p-2 rounded d-block">
+        </div>
+    </div>
+{{!-- Фото --}}
+
+        <div class="card-body">
+
+            
+    <div class="row">
+        <div class="col-8 ">
+        {{#if isNew}} 
+            <span class="badge bg-primary rounded-pill fs-6 fw-bold text-uppercase mb-2 me-2"> нове  </span>
+        {{/if}} 
+        {{#if isHot}} 
+           <span class="badge bg-warning rounded-pill fs-6 fw-bold text-uppercase mb-2 me-2"> HOT!  </span>
+        {{/if}} 
+        </div>
+</div>
+        {{!-- Рядок під список - початок --}}
+         <div class="row">
+{{!-- Початок списку --}}
+          <ul type="none">
+             {{#if isFast}}
+      
+              <li>   <span class="badge bg-success fs-6 fw-normal mt-2"> Швидка доставка  </span></li>
+         
+            {{/if}}
+
+            {{#if isFree}}
+      
+              <li>  <span class="badge bg-secondary fs-6 fw-normal mt-2"> Безкоштовна доставка  </span></li> 
+        {{/if}}
+   </ul>
+{{!-- Кінець списку --}}
+   </div>
+   {{!-- Рядок під список - кінець --}}
+
+
+{{#if name}}
+    <p class="fs-3 fw-medium">{{name}}</p>
+{{/if}}
+
+
+{{#with review}}
+    <p class="fs-6">{{amount}} {{text}}</p>
+{{/with}}
+     <p class="fs-2 fw-medium">{{price}}</p>
+     <p class="fs-6">{{delivery}}</p>
+
+     {{#each buttons}}
+     <div class="row">
+        <ul type="none">
+              <li> {{> buttons}}</li> 
+         </ul>
+    </div>
+        {{/each}}
+   
+
+    {{#each characteristics}}
+
+         <ul >
+              <li> <p class="fs-6">{{title}} - {{value}} </p> </li> 
+         </ul>
+
+        {{/each}}
+
+
+
+
+        </div>
+ {{!-- Тіло картки - кінець --}}
+    </div>
+{{!-- Картка - кінець --}}

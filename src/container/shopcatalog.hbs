@@ -1,0 +1,112 @@
+<div class="col-12">
+
+{{> breadcrumb}}
+
+
+{{!-- Верхня частина сторінки --}}
+<div class="row px-2 pb-3 pt-1">
+    <h2>{{header}}</h2>
+</div>
+
+<div class="row px-2 pb-3">
+    {{#each sortBlock}}
+<div class="col-3">
+<select class="form-select" aria-label="multiple select">
+  <option selected>{{placeholder}}</option>
+  {{#each options}}
+     <option value="{{value}}">{{text}}</option>
+  {{/each}}
+</select>
+</div>
+{{/each}}
+</div>
+{{!-- Верхня частина сторінки --}}
+
+
+{{!-- Рядок поділений на 2 колонки - Початок --}}
+<div class="row pt-4">
+
+
+{{!-- Ліва колонка - розміром на 4 стовбці - початок --}}
+<div class="col-4">
+  {{#with filterBlock}}
+    {{!-- Строка тіла колонки (рядок) - початок --}}
+ <div class="row  ps-4">
+    {{!-- Колонка тіла строки (колонки) - початок --}}
+        <div class="col-12 rounded border">
+
+{{#with sellers}}
+            {{!-- Строка з даними --}}
+ {{> checkbox}}
+{{/with}}
+
+{{#with brands}}
+{{> checkbox}}
+{{/with}}
+
+{{!-- PRICE - START --}}
+{{#with price}}
+{{> checkbox}}
+{{/with}}
+{{!-- PRICE - END --}}
+
+{{#each filterList}}
+ {{!-- Строка з даними --}}
+{{> checkbox}}
+{{/each}}
+
+        </div>
+         {{!-- Колонка тіла строки (колонки) - кінець --}}
+    </div>
+      {{!-- Строка тіла колонки (рядок) - кінець --}}
+{{/with}}
+
+</div>
+{{!-- Ліва колонка - розміром на 4 стовбці - кінець --}}
+
+
+
+
+
+
+
+
+
+{{!-- Права колонка - розміром на 4 стовбці - початок --}}
+<div class="col-8">
+
+
+    {{!-- Розмітка всередині колонки на 12 стовбців в ряду колонки - початок --}}
+ <div class="row px-3">
+        <div class="col-12"> 
+            
+            {{!-- В рядку має поміститись 2 картки тому далі створюємо col-6 --}}
+            <div class="row g-3 pb-3">
+               
+{{!-- Місце для компонента catalogItem - початок --}}
+{{#each goodsList}}     
+        
+        <div class="col-6">
+
+{{> catalogItem}}
+
+        </div>
+{{/each}}
+{{!-- Місце для компонента catalogItem - кінець --}}
+
+            </div>
+        </div>
+    </div>
+      {{!-- Розмітка всередині колонки на 12 стовбців в ряду колонки - кінець --}}
+
+
+</div>
+{{!-- Права колонка - розміром на 4 стовбці - кінець --}}
+
+
+</div>
+{{!-- Рядок поділений на 2 колонки - Початок --}}
+
+
+
+</div>
