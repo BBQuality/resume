@@ -1,13 +1,46 @@
-{{!-- 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- --}}
- <div>
-    {{> nav}}
-  </div>
-<h1>Hello world</h1>
+<div class="col-12">
+<div class="row mx-5 g-3">
+{{#with page}}
 
-{{!-- 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+
+<div class="col-4 border">
+
+    <p class="uppercase fs-4 fw-bold">Інформація про ...</p>
+{{#each about}}
+<div class="col-2 p-2">
+
+{{> buttons}}
+
+</div>
+{{/each}}
+</div>
+
+<div class="col-4 border">
+
+    <p class="uppercase fs-4 fw-bold">IT - Сфера</p>
+{{#each it}}
+<div class="col-2 p-2">
+
+{{> buttons}}
+
+</div>
+{{/each}}
+</div>
+
+
+<div class="col-4 border">
+
+    <p class="uppercase fs-4 fw-bold">Інтернет-Магазин</p>
+{{#each shop}}
+
+<div class="col-4 p-2">
+
+{{> buttons}}
+
+</div>
+{{/each}}
+</div>
+
+{{/with}}
+</div>
+</div>
