@@ -1,41 +1,79 @@
-<div class="col-12">
-<div class="row mx-5 g-3">
+
+<section class="container-xxl g-1 bg-dangerous">
+<div class="col-12 mx-2 px-2 bg-warning">
+<div class="row mx-2 px-2 g-5 bg-primary">
 {{#with page}}
 
 
-<div class="col-4 border">
+<div class="col-3 mx-5 px-3 border bg-info">
 
-    <p class="uppercase fs-4 fw-bold">Інформація про ...</p>
+    <p class="uppercase fs-4 fw-bold mx-3 mt-2 p-3">Інформація про ...</p>
 {{#each about}}
-<div class="col-2 p-2">
+<div class="row border-top border-bottom p-1">
+<div class="col-8 border-end mt-1 px-3 pt-2 bg-info">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+ {{> buttons}}
+  </label>
 
-{{> buttons}}
+
+</div>
+
+<div class="col-4 border-start mt-1 px-2 pt-3 bg-info">
+
+<p class="Display-6">{{link}}</p>
+
+</div>
+
 
 </div>
 {{/each}}
 </div>
 
-<div class="col-4 border">
+<div class="col-3 border mx-5 px-3 bg-success">
 
-    <p class="uppercase fs-4 fw-bold">IT - Сфера</p>
+    <p class="uppercase fs-4 fw-bold ms-5 p-3 mt-2 bg-success">IT - Сфера</p>
 {{#each it}}
-<div class="col-2 p-2">
+<div class="row border-top border-bottom p-1">
+<div class="col-7 border-end mt-1 px-3 pt-2 bg-success">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+ {{> buttons}}
+  </label>
 
-{{> buttons}}
+
+</div>
+
+<div class="col-5 border-start mt-1 px-3 pt-3 bg-success">
+
+<p class="Display-6">{{link}}</p>
+
+</div>
 
 </div>
 {{/each}}
 </div>
 
 
-<div class="col-4 border">
+<div class="col-3 ms-5 px-3 border bg-secondary">
 
-    <p class="uppercase fs-4 fw-bold">Інтернет-Магазин</p>
+    <p class="uppercase fs-4 fw-bold mx-3 mt-2 p-3">Інтернет-Магазин</p>
 {{#each shop}}
-
-<div class="col-4 p-2">
-
+<div class="row border-top border-bottom p-1">
+<div class="col-8 border-end mt-1 px-3 pt-2">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
 {{> buttons}}
+  </label>
+
+
+</div>
+
+<div class="col-4 border-start mt-1 px-2 pt-3 bg-secondary">
+
+<p class="Display-6">{{link}}</p>
+
+</div>
 
 </div>
 {{/each}}
@@ -44,3 +82,5 @@
 {{/with}}
 </div>
 </div>
+
+</section>

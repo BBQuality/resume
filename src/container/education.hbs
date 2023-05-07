@@ -1,51 +1,105 @@
 <main>
-        <div>
-            <section>
-                <div>
+
+        <div class="container-fluid ">
+            <section class="row g-1 bg-secondary">
+                <div class="col-4  bg-primary">
                     {{> title data="My education :" big=true}}
                     {{#with main}}
                     {{#each institute}}
                     <ul>
-                        <li>{{name}} {{#if isEnd}}(закінчив){{else}}(ще навчаюсь){{/if}}</li>
+                       
+                        <li> <div class="row p-1 ">
+                              <div class="col-4 p-1 bg-light">
+                            {{name}} 
+                            </div>
+                            
+                            {{#if isEnd}}
+                              <div class="col-4 p-1 bg-success">
+                            (закінчив)
+                            </div>
+                            {{else}}
+                              <div class="col-4 p-1 bg-warning">
+                            (ще навчаюсь)
+                            </div>
+                            {{/if}}
+                               </div>
+                            </li>
+                     
                     </ul>
                     {{/each}}
-                </div>
                 {{/with}}
-                <hr>
-                <div>
-                    {{> title data="My certificates :" big=false}}
+              </div>
 
-                    {{#with main}}
-                
-                        {{#each certificates}}
+ 
+    <div class="col-4 bg-info">
+        {{> title data="My certificates :" big=false}}
+    {{#with main}}
+   
+  
                 <ul>
-                     <li>{{name}} {{#if status}}(ID: {{id}}){{/if}}</li>
-                        
-                    </ul>
-    {{/each}}
-<br>
-<hr>
-<br>
-    {{#each certificates}}
+           {{#each certificates}}
+                        <li> <div class="row p-1  bg-light"> 
+                            <div class="col-4 px-1 py-2 bg-warning">
+                            {{name}} 
+                            </div>
+                            
+                            {{#if status}}
+                            <div class="col-4 px-1 py-2 bg-success">
+                          <span>(ID: {{id}})</span>
+                        </div>
+                            {{/if}}
+
+ </div>
+                        </li>
+                         {{/each}}
+                       
+                </ul>
+         {{/with}}
+</div>
+
+ <div class="col-4  bg-danger">
+    {{> title data="My certificates :" big=false}}
+    {{#with main}}
+
+        {{#each certificates}}
+
+         <ul>
+            
                     {{#if @index}}
-                <li>
-                    {{name}}
-                </li>
+                 <li>
+                    <div class="col-5 px-2 py-2 border bg-warning">
+                       {{name}}
+               </div> 
+               
+                   </li>
                 {{else}}
-                <li>
-                    {{name}} ({{id}})
-                </li>
+                   <li>     
+                    <div class="col-5 px-2 py-2 border bg-warning">     
+                   
+                    {{name}}
+             
+                     ( {{id}} )
+                     </div>
+    
+                   </li>
                 {{/if}}
+             
+                </ul>
+         
     {{/each}}
-                
-
-
-                    {{/with}}
-                </div>
+      {{/with}}
+   
+   </div>      
+        
 
             </section>
 
         </div>
+<section class="row">
+      <a href="/" title="Main Page" class="btn text-dark rounded uppercase my-1 py-3 border border-5 bg-info">Головна</a>
+</section>
+
+
     </main>
 
 

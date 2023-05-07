@@ -1,13 +1,95 @@
-<main>
+
+
+    
+    <main style="linear-gradient(40deg, rgba(19,174,223,1) 5%, rgba(255,222,27,0.7091211484593838) 87%);">
+
+<style>
+
+html, body, main {
+    background: linear-gradient(40deg, rgba(19,174,223,1) 5%, rgba(255,222,27,0.7091211484593838) 87%);
+}
+
+</style>
+
+        <section class="container-fluid p-4 row border-bottom border-top border-start border-5 bg-dark justify-content-center" >
+ <div class="col-4 p-1 bg-info ">     
+    <div class="row col-8 mb-5 ms-5 pb-5 pe-1 pt-5 border-bottom border-top border-end border-5 bg-warning ">
+        <div class="row m-4 p-4 bg-dark border-bottom border-top border-start border-5">
+         {{> nav}}
+         </div>
+         </div>
+    {{#with header}}
+    <section class="box p-3 bg-yellow">
+        <div class="row mt-5 bg-dark text-light border-bottom border-top border-end border-5">
+            <h1>{{title}} | {{name.firstname}} {{name.lastname}} </h1>
+        </div> 
+        <div class="row mb-5 bg-dark text-light">
+            <em>{{address}}</em>
+        </div>
+        </section>
+          <section class="box p-3 mt-5 bg-warning">
+        <div class="row px-5 py-5 mx-5 my-5 border-bottom">
+            <b>{{position}}</b>
+        </div>
+        <div class="row pt-1 mx-5 my-5 border-start border-top border-end border-5 bg-dark text-light">
+            <em>{{salary}}</em>
+        </div>
+       </section>
+        {{/with}}   
+      
+  </div>
+
+    <section class="col-8 container-fluid bg-dark ">
+{{#with main}}
+        <div class="row border-bottom border-top bg-secondary ">
+
+<section class="col-6 mb-5 p-4 border-start border-end bg-warning">
+    <div class="row col-10 ms-5 mt-5 pe-5   border-start border-top border-end border-5 bg-dark text-light">
     {{> title data="Summary" big=true}}
-    {{#with main}}
-    <section>
+    </div>
+    <div class="row col-10 ms-5 mt-5 p-5 border-start border-top border-end border-5 ">
         {{summary.text}}
-    </section>
-    <hr>
+    </div>
+    
+   
+</section>
+
+<section class="col-6 mt-5 p-5 border-start border-end bg-info">
+     <div class="row col-4 mt-5 ms-5 px-5 border-bottom border-top bg-dark border-start border-5 text-light">
     {{> title data="Experience" big=false}}
-    <section>
+   </div> 
+ <div class="row col-10 ms-5 mt-5 p-5 border-bottom border-top border-end border-5 ">
         {{experience.text}}
+    </div>
     </section>
-    {{/with}}
+ <a href="/" title="Main Page" class="btn text-light rounded uppercase border border-5" style="background: linear-gradient(40deg, rgba(159,17,43,1) 5%, rgba(255,222,27,0.7091211484593838) 87%, rgba(255,222,27,0.8911939775910365) 92%); ">Головна</a>
+
+    </div>
+    {{/with}}    
+    
+    {{#with footer}}
+<div class="row border-bottom border-top bg-secondary">
+<section class="col-6 p-2 border-start border-end bg-info">
+<div class="row col-9 my-1 mx-2 p-5">
+    <div class="row p-4 m-3 bg-dark border-bottom border-top border-end border-5">
+    {{> link social.phone blank=true }}
+    {{> link social.email blank=true }}
+    {{> link social.linkedin blank=true noLine=true}}
+</div>
+</div>
+</section>
+<section class="col-6 p-2 border-start border-end bg-warning">
+    <div class="row col-4 ms-5 my-3 p-3 ">
+     <em>{{../header/address}}</em>
+    </div>
+    <div class="row col-10 ms-5 mt-2 p-2 border border-5 bg-dark text-light">
+<em>Copyright by {{../header/name/firstname}} {{../header/name/lastname}}</em>
+    </div>
+</section>
+{{/with}}
+
+    </section>
+</section>
+
 </main>
+

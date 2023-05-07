@@ -16,26 +16,30 @@
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
  
-<body>
+<body class="bg-secondary">
 
-  <header>
-
-    <div class="col-12">
-        <div class="row p-3 my-1 border border-3" style="background-color: rgba(0, 255, 255, 0.179)">
+  <header class="bg-warning">
+<div class="row ms-3  " style="background-color: rgba(81, 89, 192, 0.179)">
+    <div class="col-12 me-3 m-1">
+        <div class="row me-4 bg-primary" style="background-color: rgba(0, 255, 255, 0.179)">
         
-<div class="col-6 text-start">    
+<section class="col-3 mx-2 text-start">    
     {{#with name}}
      <span class="fs-3 fw-medium">{{first}} {{last}}</span>
     {{/with}}
-</div>
+</section>
 
-<div class="col-6 text-end">
+<section class="col-5 mx-3">
+   <div class="row"></div> 
+</section>
+
+<section class="col-3 text-end">
    <h2 class="fw-semibold">{{title}}</h2> 
-</div>
+</section>
 
         </div>
     </div>
-
+</div>
   </header>
     
   <main>
