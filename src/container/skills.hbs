@@ -1,42 +1,46 @@
  <main>
-        <div>
-            <section>
-                {{> title data="All skills :" big=true}}
+        <div class="col-10 m-3 p-4">
+            <div class="row g-1 p-3 bg-danger">
+                   <div class="col-4 row mx-2 p-5 bg-success"> 
+             <span> {{> title data="All skills :" big=true}} </span>  
                 {{#with main}}
-                <div>
-
-                    <hr>
+                <div class="row">
                     {{#each skills}}
                     <ul>
-                        <li>
+                        <li class="row border border-3 p-3 ">
                             {{title}} {{#if point includeZero=true}} ({{point}}) {{/if}}
-                            {{#if isTop}} (Top) {{/if}}
-                            {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
+                            {{#if isTop}}  <div class="col-4 ms-2 p-1 bg-warning">(Top) </div>{{/if}}
+                            {{#unless point includeZero=true}} <div class="col-4 m-1 ms-2 p-1 bg-danger"> (не вивчаємо) </div> {{/unless}}
                             {{#unless point}}
-                            {{#if point includeZero=true}}(зараз вивчаємо){{/if}}
+                            {{#if point includeZero=true}}<div class="col-4 p-1 bg-primary"> (зараз вивчаємо) </div>{{/if}}
                             {{/unless}}
                         </li>
                     </ul>
                     {{/each}}
                 </div>
                 {{/with}}
-                <hr> {{> title data="My hobbies :" big=false}}
-                <hr>
+                   </div>
+                   <div class="col-3 my-5  py-5 row px-5 "> 
+                    <a href="/" title="Main Page" class="btn text-light rounded uppercase my-5 py-5 border border-5" style="background: linear-gradient(40deg, rgba(159,17,43,1) 5%, rgba(255,222,27,0.7091211484593838) 87%, rgba(255,222,27,0.8911939775910365) 92%); ">Головна</a>
+                   </div>
+   <div class="col-4 row mx-2 p-5 bg-primary"> 
+           <span>    {{> title data="My hobbies :" big=false}} </span>
+          
                 {{#with main}}
-                <div>
+                <div class="row"> 
 
 
                     {{#each hobbies}}
-                    <ul>
-                        <li>
-                            {{name}} {{#if isMain}} (Primary) {{else}} (Secondary) {{/if}}
+                    <ul type="none">
+                        <li class="row border border-3 p-5 my-5 ">
+                            {{name}} {{#if isMain}}  <div class="col-6 bg-info"> (Primary) </div>{{else}}  <div class="col-7  bg-secondary">(Secondary) </div> {{/if}}
 
                         </li>
                     </ul>
                     {{/each}}
                 </div>
-
-            </section>
-            {{/with}}
+ {{/with}}
+            </div>
+            </div>
         </div>
     </main>

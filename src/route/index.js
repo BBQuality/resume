@@ -36,16 +36,140 @@ var title = {
   big: true,
 }
 
-//=================================================================
 
-// router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+    title: 'Resume project',
+      name: {
+      first: 'Bogdan',
+      last: 'Iali',
+    },
+    page: {
+      about: [
+      {
+        link: '/bio',
+        text: 'Біографія',
+        isMain: true,
+      },
+      {
+        link: '/summary',
+        text: 'Резюме',
+        isMain: true,
+      },
+      {
+        link: '/work',
+        text: 'Досвід роботи',
+        isMain: true,
+      },
+      {
+        link: '/education',
+        text: 'Освіта',
+        isMain: true,
+      },
+      {
+        link: '/skills',
+        text: 'Навички',
+        isMain: true,
+      },
+      {
+        link: '/facebook',
+        text: 'Facebook',
+        isMain: true,
+      },
+      {
+        link: '/person',
+        text: 'Працівники',
+        isMain: true,
+      },
+      {
+        link: '/program',
+        text: 'Афіша',
+        isMain: true,
+      },  
+      ],
+      it: [
+      {
+        link: '/js',
+        text: 'JS',
+        isMain: true,
+      },
+      {
+        link: '/web',
+        text: 'Web',
+        isMain: true,
+      },
+      {
+        link: '/task21',
+        text: 'Learning',
+        isMain: true,
+      },
+      {
+        link: '/task22',
+        text: 'Advertising',
+        isMain: true,
+      },
+      {
+        link: '/task31',
+        text: 'Landing',
+        isMain: true,
+      },
+    ],
+    shop: [
+      {
+        link: '/car',
+        text: 'Автівка',
+        isMain: true,
+      },
+      {
+        link: '/mac',
+        text: 'MacBook',
+        isMain: true,
+      },
+      {
+        link: '/shophome',
+        text: 'Shop',
+        isMain: true,
+      },
+      {
+        link: '/shopnews',
+        text: 'Новини',
+        isMain: true,
+      },
+      {
+        link: '/shopcatalog',
+        text: 'Каталог',
+        isMain: true,
+      },
+      {
+        link: '/shopproduct',
+        text: 'Картка товару',
+        isMain: true,
+      },
+      {
+        link: '/shopreview',
+        text: 'Про товар',
+        isMain: true,
+      },
+      {
+        link: '/shopcart',
+        text: 'Кошик',
+        isMain: true,
+      },
+      {
+        link: '/shoporder',
+        text: 'Замовлення',
+        isMain: true,
+      },
+      {
+        link: '/shopprofile',
+        text: 'Аккаунт',
+        isMain: true,
+      },
+    ],
+  },
+  })
 
 })
 
@@ -2762,7 +2886,6 @@ router.get('/shopcart', function (req, res) {
   })
 })
 
-
 router.get('/shopprofile', function (req, res) {
 
   res.render('shopprofile', {
@@ -3716,7 +3839,7 @@ router.get('/shopcatalog', function (req, res) {
       ],
     })
 
-  })
+})
 
 
 
