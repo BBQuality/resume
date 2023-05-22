@@ -1,9 +1,10 @@
 
-    <main>
+    <main style="background: yellow;" class="p-5 m-5 border border-3">
         {{#with main}}
         <div>
-            <section>
-                <div>
+            <a href="/" title="Main Page" class="btn text-light rounded uppercase border border-5" style="background: linear-gradient(40deg, rgba(159,17,43,1) 5%, rgba(255,222,27,0.7091211484593838) 87%, rgba(255,222,27,0.8911939775910365) 92%); ">Головна</a>
+            <section class="row">
+                <div class="col-2 p-1 border bg-dark text-light"> 
                     {{> title data="My works :" big=true}}
 
                     {{#each work}}
@@ -11,55 +12,60 @@
                         <li>
                             <div>{{position}}</div>
                             <div>{{duration.from}} - {{#if duration.to}}{{duration.to}}{{else}}(ще працюю){{/if}}</div>
-                            <div>{{#if company.url}}{{> link href=company.url text=company.name blank=true noLine=true}}{{else}} <b>{{company.name}}</b>{{/if}}</div>
+                            <div class="text-danger">{{#if company.url}}{{> link href=company.url text=company.name blank=true noLine=true}}{{else}} <b>{{company.name}}</b>{{/if}}</div>
                         </li>
                     </ul>
 
                 </div>
-                <div>Project: {{projectAmount}} </div>
-                <hr>
+      
+              
                 {{#each projects}}
-                <ul>
-                    <li>
-                        <div>{{> link href=url text=name blank=true noLine=true}}</div>
-                        <br>
+           
+
+                        <div class="col-2 p-1 border bg-warning text-primary">{{> link href=url text=name blank=true noLine=true}}
+                  
                         <div>
                             <p>{{about}}</p>
                         </div>
-                        <hr>
-                        <br>
-                        <div>
+                     </div>
+                        <div class="col-2 p-1 m-2 border bg-success text-dark"> 
                             <em>Project amount:</em> <b>({{stackAmount}})</b>
-                        </div>
-                        <br>
+                       
+                      
                         <div>
-                            <br>
                             {{#each stack}}
                             <ul>
                                 <li>{{name}} </li>
                             </ul>
                             {{/each}}
                         </div>
-                        <hr>
-                        <br>
-                        <div>
+                    </div>
+                       
+                        <div class="col-3 p-1 m-2 border bg-secondary text-light fw-bold" style="font-size: 16px;">
                             <em>Project awards: </em> <b>({{awardsAmount}})</b>
-                        </div>
-                        <br>
+                       
+                     
                         <div>
-                            <br>
+                          
                             {{#each awards}}
                             <ul>
                                 <li>{{name}} </li>
                             </ul>
                             {{/each}}
+                        </div> 
                         </div>
-                        <br>
-                    </li>
-                </ul>
+                   
+      
                 {{/each}}
                 {{/each}}
             </section>
+
+
+                    {{#each work}}
+         
+                <div class="row col-9 mx-2 my-1 p-3 border bg-danger text-dark">Project: {{projectAmount}} </div>
+ {{/each}}
+
  {{/with}}
 </main>
     

@@ -1,11 +1,14 @@
-<main>
-    <br>
-    <div>{{> title data="WEB Technologies" big=true}}</div>
-    <br>
-    <hr>
-    <br>
+<main style="background: green;">
+ <div class="row g-2">
+    <div class="col-5 mx-1 p-3">
+<a href="/" title="Main Page" class="btn text-light rounded uppercase border border-5" style="background: linear-gradient(40deg, rgba(159,17,43,1) 5%, rgba(255,222,27,0.7091211484593838) 87%, rgba(255,222,27,0.8911939775910365) 92%); ">Головна</a>
+    </div>
+    <div class="col-3 mx-1 p-3">{{> title data="WEB Technologies" big=true}}</div>
+      <div class="col-3 mx-1 p-3"></div>
+    </div>
+ <div class="row g-2">
 {{#with web}}
-<div>
+<div class="col-4 p-2 border bg-primary">
     {{#with languages.[0]}} 
             <dl>
                 <dt>
@@ -18,33 +21,43 @@
             <dt>
                 <strong>Description :</strong>
             </dt>
+         
             <dd>
                 <p>{{description}}</p>
             </dd>
+       
             <dd>
-    <details open>
+    <details open  class="border-top p-2 my-1">
         <summary>
                 <ins><strong>Teg and values :</strong></ins>
         </summary>
 {{#each elements}} 
             <dl>
+                <div class="row border-top my-2">
+                  <div class="col-5 my-2 ms-4">
                 <dt>
                    <ins><strong>Teg</strong></ins> : <i>{{name}}</i>
                 </dt>
-            <dt>
+                </div> 
+                <div class="col-5">
+            <dt>  
                <ins><strong>Description :</strong></ins> <i>{{description}}</i>
             </dt> 
-       
+       </div>
+       </div>
             <dd>
-<details>
+<details open class="border p-4 my-2">
         <summary>
                 <ins><strong>Attributes :</strong></ins>
         </summary>
                 {{#each attributes}}
                 <dl>
+                    
+                     <div class="col-5">
                 <dt>
                    <ins><strong>Attribute</strong></ins> : <i>{{name}}</i>
                 </dt>
+                </div>
             <dt>
                 <ins><strong>Description :</strong></ins>
             </dt>
@@ -66,10 +79,8 @@
             </dl>
     {{/with}}
 </div>
-<br>
-<hr>
-<br>
-<div>
+
+<div class="col-4 p-2 border bg-warning border">
     {{#with languages.[1]}} 
             <dl>
                 <dt>
@@ -92,13 +103,18 @@
         </summary>
 {{#each properties}} 
             <dl>
+                    <div class="row border-top my-2 ms-1 border-bottom">
+                  <div class="col-5 my-2 ms-4 border-end">
                 <dt>
                    <ins><strong>Teg</strong></ins> : <i>{{name}}</i>
                 </dt>
+                  </div> 
+                <div class="col-5 p-2">
             <dt>
                <ins><strong>Description :</strong></ins> <i>{{description}}</i>
             </dt> 
-       
+         </div> 
+          </div> 
             <dd>
 <details>
         <summary>
@@ -106,15 +122,21 @@
         </summary>
                 {{#each values}}
                 <dl>
+                      <div class="row border-top my-2 ms-1 border-bottom">
+                  <div class="col-5 my-2 ms-4 border-end">
                 <dt>
                    <ins><strong>Values</strong></ins> : <i>{{value}}</i>
                 </dt>
+                </div>
+                <div class="col-5 my-2 ms-4">
             <dt>
                 <ins><strong>Description :</strong></ins>
             </dt>
+        
             <dd>
                 <i>{{description}}</i>
-            </dd>
+            </dd>   
+             </div>
                 </dl>
                    
                {{/each}}
@@ -130,25 +152,31 @@
             </dl>
     {{/with}}
 </div>
-<br>
-<hr>
-<br>
-<div>
+
+<div class="col-4 p-2 border bg-danger">
     {{#with languages.[2]}} 
             <dl>
+                    
                 <dt>
                     <h3><ins>Title</ins> : <i>{{name}}</i></h3>
             </dt>
+
+               <div class="row border-top my-2 p-2 border-bottom">
+                  <div class="col-3 my-2 mx-3 p-2 border-start border-end">
             <dt>
                 <strong>Version : </strong> <ins>{{version}}</ins>
             </dt>
-            <br>
+            </div>
+        <div class="col-8 my-2 mx-1 p-2 border-end">
             <dt>
                 <strong>Description :</strong>
             </dt>
+            
             <dd>
                 <p>{{description}}</p>
-            </dd>
+            </dd> 
+            </div> 
+             </div>
             <dd>
     <details open>
         <summary>
@@ -156,13 +184,19 @@
         </summary>
 {{#each functions}} 
             <dl>
+                        <div class="row border-top my-2 p-2 border-bottom">
+                        <div class="col-5 my-2 ms-4 border-end">
                 <dt>
                    <ins><strong>Teg</strong></ins> : <i>{{name}}</i>
                 </dt>
+
+</div>
+                        <div class="col-5 my-2 ms-4 border-end">
             <dt>
                <ins><strong>Description :</strong></ins> <i>{{description}}</i>
             </dt> 
-       
+       </div>
+       </div>
             <dd>
 <details>
         <summary>
@@ -170,18 +204,24 @@
         </summary>
                 {{#each parameters}}
                 <dl>
+                     <div class="row border-top my-2 p-2 border-bottom">
+                        <div class="col-4 my-2 mx-1 border-end">
                 <dt>
                    <ins><strong>Parameters</strong></ins> : <i>{{name}}</i>
                 </dt>
+
                 <dt>
                    <ins><strong>Type</strong></ins> : <i>{{type}}</i>
                 </dt>
+                </div>
+              
+                   <div class="col-7 my-2 mx-1 border-end">
             <dt>
                 <ins><strong>Description :</strong></ins>
-            </dt>
+            </dt> 
             <dd>
                 <i>{{description}}</i>
-            </dd>
+            </dd> </div>
                 </dl>
                    
                {{/each}}
@@ -198,4 +238,5 @@
     {{/with}}
 </div>
 {{/with}}
+</div>
 </main>
