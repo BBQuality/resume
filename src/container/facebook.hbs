@@ -1,79 +1,105 @@
-<main>
-    <div>
-    <p class="fs-1">{{name}}</p>
-    {{#each users}}
+<main class="px-1 pt-0" style="background:blueviolet;">
+
+    <div class="row ps-2 " style="background: blue;">
+
+        <div class="col-11 bi-align-start ">
+    <p class="fs-3 ps-5 pe-1 pt-1 mb-0 text-light fw-bold ">Друзі</p>
+   </div>
+    <div class="col-1 bi-align-end ">
+        <a href="#" class="btn p-2" type="button" style="background:blue;">
+    <p class="fw-bold text-light mb-2 ms-1 ps-4 pt-1 pb-1" style="font-size:medium;">{{name}}</p>
+    </a>
+     </div>  
     
-    <table class="border ">
-        <tr class="border">
-            <td>
-                <div><ins class="fs-3 bg-success">Друзі:</ins> </div>
+                </div> 
+
+        {{#each users}}            
+                <div class="row mt-1 py-2 ms-2 ">
+             <div class="row mt-3 p-1 border-bottom">
+                   <div class="col-3 bi-align-end " >
+<div class="col-10 bi-align-start p-3 border">
 <p class="fw-semibold">ID:{{id}}</p>
 <p class="fw-semibold">Ім'я: {{name}}</p>
 <p class="fw-medium">Стать: {{gender}}</p>
 <p class="fw-normal">Вік: {{age}}</p>
-
-</td>
-<td>
-    <table class="border">
-        <tr class="border">
-            <td></td>{{#each friends}}
-            <td class="border">
-             <div><ins class="fs-3 bg-primary">Cпільні друзі:</ins> </div>  
-
-<p class="fw-semibold">ID: {{id}}</p>
-<p class="fw-semibold">Ім'я: {{name}}</p>
-<p class="fw-medium">Стать: {{gender}}</p>
-<p class="fw-normal">Вік: {{age}}</p>
-
-            </td>{{/each}} {{#with friends.[0]}}
-{{#each mutual_friends}}
-            <td class="border">
-                <div><ins class="fs-3 bg-secondary"> Ви можете їх знати:</ins> </div> 
-               
-<p class="fw-semibold">ID: {{id}}</p>
-<p class="fw-semibold">Ім'я: {{name}}</p>
-<p class="fw-medium">Стать: {{gender}}</p>
-<p class="fw-normal">Вік: {{age}}</p>
-
-
-</td>{{/each}}
-{{/with}}
-</tr>
-</table>
-
-</td>
-</tr>
-</table>
-<hr>
 </div>
-{{/each}}
+</div>
 
-<table class="border">
-    <tr class="border">
-        <td class="border"><ins class="fs-3 bg-success">Групи:</ins></td>
-        <td></td>
-        <td class="border"><p class="fw-normal">Користувачі: </p></td>
-    </tr>
+  <div class="row col-8 bi-align-middle">
+       <div class="row col-5 ">
+    <p class="fs-5 fw-bold py-2 text-light bi-align-start border-top border-bottom" style="background:blue;">Cпільні друзі:</p>
+  </div>  
+   <div class="row mx-1 col-8 bi-align-start" > 
+     {{#each friends}}  
+ <div class="row mx-2 col-4 p-1 bi-align-center border">
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+   </div>
+           {{/each}} 
+      
+    </div>
+    
+     
+       
+
+
+           {{#with friends.[0]}}
+ <div class="row col-8 bi-align-middle mt-2">
+
+         <div class="row col-5 ">
+                     <p class="fs-5 fw-bold py-2 text-light bi-align-start border-top border-bottom" style="background:blue;"> Ви можете їх знати:</p>
+         </div> 
+
+        <div class="row mx-1 col-11 bi-align-start">
+                    {{#each mutual_friends}}
+            <div class="row mx-2 col-5 p-1 bi-align-center border">               
+<p class="fw-semibold">ID: {{id}}</p>
+<p class="fw-semibold">Ім'я: {{name}}</p>
+<p class="fw-medium">Стать: {{gender}}</p>
+<p class="fw-normal">Вік: {{age}}</p>
+            </div>
+                    {{/each}}
+        </div>
+</div>
+{{/with}}
+ </div>
+
+{{/each}}
+</div>
+           
+</div> 
+ <a href="/" title="Main Page" class="btn btn-success text-light rounded uppercase border border-3">Головна</a>
+
+
+<div class="row ps-2 bi-align-start" >
+
+        <div class="col-5 bi-align-start mt-4 border-top border-bottom " style="background: blue;">
+       <p class="fs-3 ps-5 pe-1 pt-1 mb-1 text-light fw-bold bi-align-start">Групи:</p>
+</div>
+<div class="col-6 bi-align-start mt-4 border-top border-bottom " style="background: blue;">
+     <p class="fs-3 ps-5 pe-1 pt-1 mb-1 text-light fw-bold bi-align-start">Користувачі: </p>
+     </div>
+</div>
+<div class="row ps-2 bi-align-start">
+
     {{#each users.[0].groups}}
-    <tr class="border">
-        <td></td>
-        <td class="border">
+         <div class="row mx-2 col-4 p-1 bi-align-center border">
 <p class="fw-semibold">ID: {{id}}</p>
 <p class="fw-semibold">Назва: {{name}}</p>
 <p class="fw-medium">Опис: {{description}}</p>
-
-        </td>
-        {{#each members}}
-        <td class="border">
+</div>
+ <div class="row mx-2 col-4 p-1 bi-align-center border">
 <p class="fw-semibold">ID: {{id}}</p>
 <p class="fw-semibold">Ім'я: {{name}}</p>
 <p class="fw-medium">Стать: {{gender}}</p>
 <p class="fw-normal">Вік: {{age}}</p>
+</div>
 
-        </td>
         {{/each}}
-    </tr>
-    {{/each}}
-</table>
+  </div>
+           
+</div> 
 
 </main>
