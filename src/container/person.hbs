@@ -1,20 +1,26 @@
-<main>
+<main class="p-2 m-1" style="background:rgba(27, 50, 135, 0.914);">
+   
+    {{#with person}}
+ <div class="row p-2 border" style="background: blue;">
 
-<br>
-<br>
 
-{{#with person}}
-        {{> title data="PERSON INFORMATION" big=true}} 
-    <hr>
-    <section>
+        <div class="col-4 mt-2 border-end">
+    <p class="fs-3 ps-5 pe-1 pt-1 mb-0 text-light fw-bold"> {{> title data="PERSON INFORMATION" big=true}} </p>
+   </div>
+    <div class="col-8">
+        <a href="#" class="btn p-2" type="button" style="background:blue;">
+    <p class="fw-bold text-light mb-2 ps-4 pt-1 pb-1" style="font-size: 24px;">{{name}}</p>
+    </a>
+     </div>  
+        </div> 
+    <section class="row bg-dark text-light py-3"> 
+        <div class="col-3 p-2">
+<dl class="border p-4 me-3 mb-5">
 
-<dl>
     <dt>
-        <ins>
-            <h3>
-                {{name}} :
-            </h3>
-        </ins>
+        <p>
+            <h3>{{name}} :</h3>
+        </p>
     </dt>
     <dd>
         <b>Age:</b> <i>{{age}}</i>
@@ -23,9 +29,10 @@
         <b>Gender:</b> <i>{{gender}}</i>
     </dd>
 </dl>
-
+        </div>
+         <div class="col-3 p-5 border">
 {{#with address}}
-<section>
+
             <details open>
                      <summary><ins><strong>Address information:</strong></ins></summary>
 <dl>
@@ -47,10 +54,8 @@
 </dl>
              </details>
              {{/with}}
-    </section> 
-<br>
-<hr>
-<br>
+    </div> 
+ <div class="col-3 p-5 border">
 {{#each education}}
     <section>
             <details open>
@@ -77,9 +82,8 @@
              </details>
     </section>
     {{/each}}
-<br>
-<hr>
-<br>
+</div>
+ <div class="col-3 p-5 border">
 {{#each workExperience}}
     <section>
             <details open>
@@ -92,7 +96,7 @@
                 </b>
         </ins>
     </dt>
-    <br>
+
     <dd>
         <b>Title:</b> <ins>{{title}}</ins>
     </dd>
@@ -118,14 +122,19 @@
     </dd>
 </dl>
 </details>
-<br>
+</dd>
+</div>
+</section>
 
+<div class="row bg-primary p-5 border">
+    <dd class="col-4 row p-2 border-bottom">
     <details open>
                      <summary><ins><strong>Employees list :</strong></ins></summary>
 
-{{#each employees}}
-<section>
-    <dl>
+
+{{#each employees}}  
+<div class="col-10 row p-3 border">
+    <dl> 
     <dd>
         <b>Name:</b> <ins>{{name}}</ins>
     </dd>
@@ -135,11 +144,17 @@
     <dd>
         <b>Department:</b> <ins>{{department}}</ins>
     </dd>
-    <dd>
-        {{#each projects}}
+    </dl>
+</div>
+    </details>
+    </dd>
+    <dd class="col-4 row p-2 border-bottom">
         <details open>
                      <summary><ins><strong>Projects :</strong></ins></summary>
-                      <dl>
+        {{#each projects}}
+        <div class="col-10 row p-3 border">
+                      <dl> 
+        
     <dd>
         <b>Name:</b> <ins>{{name}}</ins>
     </dd>
@@ -149,80 +164,122 @@
     <dd>
         <b>Status:</b> <ins>{{status}}</ins>
     </dd>
-     <dd>
+                      </dl>
+    </div>
+        </details>
+  </dd>
+     <dd  class="col-4 row p-2 border-bottom">
         <details open>
                      <summary><ins><strong>Teams :</strong></ins></summary>
-                     <dl>
+                    
+                      <div class="col-10 p-3 mb-3 border">
+                            <dl>
                         <dd>
                             {{#each teams}}
                             <b>Team name: </b> <ins>{{team_name}}</ins>
                         </dd>
-                         <dd>
+                         <dd class="col-10 row mt-4">
+                      
                             {{#with team_leader}}
-                                     <ol><b>Team Leader: </b> <ins>{{name}}</ins></ol> 
-                                     <ol><b>Position: </b> <ins>{{title}}</ins></ol> 
-                                     <ol><b>Email: </b> <ins>{{email}}</ins></ol> 
+                           
+                             <ul class="p-2 border me-2" type="none">
+                                     <li><b>Team Leader: </b> <ins>{{name}}</ins></li> 
+                                     <li><b>Position: </b> <ins>{{title}}</ins></li> 
+                                     <li><b>Email: </b> <ins>{{email}}</ins></li> 
+                             </ul>
                                      </dd>
+                                    
                                      {{/with}}
-                                     <br>
+                        
                                      {{#each team_members}}
-                                     <dd>
+                                 </dl>
+                                 </div> 
+        </details>
+                                 </dd>  
+        <dd  class="col-6 row p-2 border-bottom">
             <details open>
-                            <summary><ins><strong>Team members :</strong></ins></summary>
-                                     <ol><b>Name: </b> <ins>{{name}}</ins></ol> 
-                                     <ol><b>Title: </b> <ins>{{title}}</ins></ol> 
-                                     <ol><b>Email: </b> <ins>{{email}}</ins></ol> 
+                            <summary>
+                                <ins><strong>Team members :</strong></ins>
+                                </summary>
+                                <div class="col-10 p-3 border mb-4"> 
+                                    <dl>
+                           <ul type="none">
+                                     <li><b>Name: </b> <ins>{{name}}</ins></li> 
+                                     <li><b>Title: </b> <ins>{{title}}</ins></li> 
+                                     <li><b>Email: </b> <ins>{{email}}</ins></li>
+                                      </ul> 
+                                   
+                                        <dd class="col-10 mb-3">
                                     <ins><b>Skills: </b></ins>
-                                     {{#each skills}}
+                                   
+                                         {{#each skills}} 
+                                    <div class="p-2 mb-1 border">
                                      <li>{{this}}</li>
+                                    </div>
                                      {{/each}}
-                                     <br>
-                            <div>
+                                     </dd>
+                                    </dl>
+        </div>
+            </details>
+            </dd>
+            <dd class="col-6 row p-2 border-bottom mt-5">
                 <details open>
                          <summary><ins><strong>Projects :</strong></ins></summary>
                      <dl>
-                        {{#each projects}}
-                        <dd>
+                      <div class="col-12 row">
+                        {{#each projects}}   
+                      
+                        <div class="col-6 p-3 ms-1 border">
+                        <dd class="my-2">
                             <b>Name: </b> <ins>{{name}}</ins>
                         </dd>
-                        <dd>
+                        <dd class="my-2">
                             <b>Description: </b> <ins>{{description}}</ins>
                         </dd>
-                        <dd>
+                        <dd class="my-2">
                             <b>Technologies: </b> <ins>{{technologies}}</ins>
                         </dd>
-                         <dd>
+                        </div>
+                        <div class="col-6 row">
+                         <dd >
                             <ins><strong>Projects :</strong></ins>
                             {{#each team_members}}
+                            <div class="p-3 border">
                             <li>{{name}}</li>
                              <li>{{title}}</li>
+                            </div>
                             {{/each}}
                         </dd>
-                            </div>
-            </details>
-             {{/each}}
+                       </div>
+              </div>
+              </dl>
+        </details>   
+    </dd>
+            
+                        {{/each}}
                         </dd>
                        
      {{/each}}
-                     </dl>
-        </details>
+    </dl>
+        </details>   
     </dd>
+   
     {{/each}}
     </dl>
         </details>
     </dd>
     {{/each}}
     </dl>
-
+ <section class="row">
+      <a href="/" title="Main Page" class="btn text-light rounded text-uppercase my-1 p-3 border border-3 fw-bold fs-3" style="background:rgba(19, 35, 95, 0.874);">Головна</a>
+</section>
 </section>
 {{/each}}
 </details>
-    </section>
+
+   
     {{/each}}
 
-<br>
-<hr>
-<br>
 
 
 {{/with}}  

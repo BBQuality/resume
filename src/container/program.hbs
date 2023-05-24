@@ -1,17 +1,63 @@
-<main>
-    {{> title data="Excursion : " big=true}} 
-<br>
-                {{#with program.excursion}}
-    <section>
+<main class="p-3" style="background:greenyellow;">
+
+<section class="row">
+      <a href="/" title="Main Page" class="btn text-dark rounded text-uppercase my-1 p-3 border border-3 bg-primary fw-bold fs-3">Головна</a>
+</section>
+
+<style>
+    .flex-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: space-around;
+}
+
+.flex-items:nth-child(1) {
+  display: block;
+  flex-grow: 2;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: baseline;
+  order: 0;
+}
+
+.flex-items:nth-child(2) {
+  display: block;
+  flex-grow: 3;
+  flex-shrink: 3;
+  flex-basis: auto;
+  align-self: flex-center;
+  order: 0;
+}
+
+.flex-items:nth-child(3) {
+  display: block;
+  flex-grow: 2;
+  flex-shrink: 3;
+  flex-basis: auto;
+  align-self: flex-center;
+  order: 0;
+}
+</style>
+
+<div class="row text-start bg-secondary text-light">
+    <div class="col-3 p-2 m-1">
+{{> title data="Excursion : " big=true}}
+</div>
+</div>
+{{#with program.excursion}}
+
+<div class="flex-container justify-content-center p-4">
+
+   <div class="flex-items p-2 m-2" style="background:rgba(15, 112, 23, 0.918);">    
 <dl>
     <dt>
-        <ins>
-            <h3>
-                {{name}}
-            </h3>
-        </ins>
+            <h3>{{name}}</h3>
+      </dt>
         {{#with location}}
-    </dt>
+    
     <dd>
         <b>Location : </b> <i>{{city}}, {{country}}</i>
     </dd>
@@ -19,13 +65,10 @@
     <dd>
         <b>Date : </b> <i>{{date}}</i>
     </dd>
- 
+    </div>
 
-<br>
-<hr>
-<br>
-</section>
-<section>
+   <div class="flex-items flex-items p-2 m-2" style="background:rgba(16, 114, 24, 0.644);">
+
         <dt>
             <ins> {{> title data="Program : " big=false}} </ins>
         </dt>
@@ -53,10 +96,6 @@
     </dl>
 </details>
 
-<br>
-<hr>
-<br>
-
 <details open>
             <summary>
                 <ins><strong>Exhibits :</strong></ins>
@@ -68,10 +107,9 @@
     <ol><strong>Author : </strong>  -  <i>{{artist}}</i></ol>
     <ol><strong>Information : </strong> - <i>{{description}}</i></ol> 
 </dd>
-<br>
+
 {{/each}}
 {{/with}}
-
 {{#with details.guide}}
 <dd>
     <ul><strong>Audio Guide : </strong> </ul>
@@ -83,10 +121,11 @@
 </dl> 
 </details>
        {{/with}} 
-       <br>
-       <hr>
-       <br>
-<section>
+
+   </div>
+
+   <div class="flex-items flex-items p-2 m-2" style="background:rgba(10, 88, 17, 0.411);">
+            
 <dl>
         <dt>
           <ins>{{> title data="Next Program Event : " big=false}}</ins>
@@ -100,10 +139,12 @@
         <ol><b>Duration : </b> <ins><strong>{{duration}}</strong></ins></ol>
     </dd>
 </dl> 
-
        </dl>
-       </section>
 {{/with}}
+   </div>
+
+</div>
+
 
 {{/with}}
 </main>
